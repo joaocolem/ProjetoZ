@@ -58,6 +58,14 @@ public void movePlayer(String input, Worlds worlds) {
             worlds.setCurrentWorld(1);
             playerX = 1;
             playerY = 2;
+        } else if (worlds.getCurrentWorld() == 2 && newX == 4 && newY == 12) {
+            worlds.setCurrentWorld(3);
+            playerX = 4;
+            playerY = 1;       
+        } else if (worlds.getCurrentWorld()== 3 && newX == 4 && newY == 0 ) {
+            worlds.setCurrentWorld(2);
+            playerX = 4;
+            playerY = 11;
         } else {
             playerX = newX;
             playerY = newY;
@@ -65,5 +73,7 @@ public void movePlayer(String input, Worlds worlds) {
 
         worlds.updateWorld(playerX, playerY, '\u2620');
     }
+
+
 }
 }

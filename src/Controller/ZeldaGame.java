@@ -14,6 +14,8 @@ public class ZeldaGame {
                 worlds.displayWorld(worlds.getWorld1(), personagem);
             } else if (worlds.getCurrentWorld() == 2) {
                 worlds.displayWorld(worlds.getWorld2(), personagem);
+            } else if (worlds.getCurrentWorld() == 3) {
+                worlds.displayWorld(worlds.getWorld3(), personagem);
             }
 
             System.out.print("Enter your move (w/a/s/d): ");
