@@ -1,6 +1,5 @@
 package src.View;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -11,8 +10,6 @@ import src.Controller.Worlds;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.DisplayMode;
-import java.awt.Font;
 
 public class GameView {
     public static Personagem personagem = new Personagem(2, 2);
@@ -30,6 +27,8 @@ public class GameView {
     }
 
     public static void displayWorld(char[][] world) {
+        String caracter;
+
         // Criando instacia JFrame
         JFrame frame = new JFrame("Swing Example");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -42,14 +41,23 @@ public class GameView {
         frame.setContentPane(panel);
 
         //Tamanho da janela
-        frame.setPreferredSize(new Dimension(200, 300));
+        frame.setPreferredSize(new Dimension(190, 300));
 
         JLabel[][] labels = new JLabel[world.length][world[0].length];
 
         for (int i = 0; i < world.length; i++) {
             for (int j = 0; j < world[0].length; j++) {
-                labels[i][j] = new JLabel(String.valueOf(world[i][j]));//setando valor da label(cada caracter)
-                labels[i][j].setBorder(new EmptyBorder(0, 1, 0, 10));//coordenadas do caracter
+                
+                caracter = i == personagem.getPlayerY() && j == personagem.getPlayerX() ? "P" : String.valueOf(world[i][j]); // Posiciona o personagem
+
+                labels[i][j] = new JLabel(caracter);//setando valor da label(cada caracter)
+
+                if (caracter.equals(".")) {
+                    labels[i][j].setBorder(new EmptyBorder(0, 6, 0, 10)); // o '.' ocupa menos espaco que '#', por isso e necessario aumentar a sua largura
+                } else {
+                    labels[i][j].setBorder(new EmptyBorder(0, 1, 0, 10));//coordenadas do caracter
+                }
+
                 labels[i][j].setForeground(Color.WHITE); //cor da letra
                 panel.add(labels[i][j]);//adicionando label ao panel
             }
