@@ -1,5 +1,6 @@
 package src.Controller;
-import java.util .Scanner;
+
+import java.util.Scanner;
 
 public class ZeldaGame {
 
@@ -17,6 +18,7 @@ public class ZeldaGame {
             } else if (worlds.getCurrentWorld() == 3) {
                 worlds.displayWorld(worlds.getWorld3(), personagem);
             }
+            personagem.printCollectedItems();
 
             System.out.print("Enter your move (w/a/s/d): ");
             String input = scanner.nextLine();
@@ -25,6 +27,6 @@ public class ZeldaGame {
 
             System.out.println("--------------------");
         }
-    
-}
+
+    }
 }
