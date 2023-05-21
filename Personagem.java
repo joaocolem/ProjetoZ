@@ -1,3 +1,7 @@
+package projetoz;
+
+import java.util.List;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -8,13 +12,15 @@
  * @author joao_
  */
 public class Personagem {
+
+    public Personagem(int playerX, int playerY) {
+        this.playerX = playerX;
+        this.playerY = playerY;
+    }
     private int playerX;
     private int playerY;
 
-    public Personagem(int x, int y) {
-        this.playerX = x;
-        this.playerY = y;
-    }
+
 
     public int getPlayerX() {
         return playerX;
@@ -32,39 +38,43 @@ public class Personagem {
         playerY = y;
     }
 
-public void movePlayer(String input, Worlds worlds) {
-    int newX = playerX;
-    int newY = playerY;
+    public World movePlayer(String input, World currentWorld) {
+        int newX = playerX;
+        int newY = playerY;
 
-    if (input.equals("w")) {
-        newY = playerY - 1;
-    } else if (input.equals("a")) {
-        newX = playerX - 1;
-    } else if (input.equals("s")) {
-        newY = playerY + 1;
-    } else if (input.equals("d")) {
-        newX = playerX + 1;
-    }
-
-    if (worlds.isValidMove(newX, newY)) {
-        worlds.updateWorld(playerX, playerY, '.');
-
-        if (worlds.getCurrentWorld() == 1 && newX == 0 && newY == 2) {
-            worlds.setCurrentWorld(2);
-            playerX = 5;
-            playerY = 3;
-        } else if (worlds.getCurrentWorld() == 2 && newX == 6 && newY == 3) {
-            worlds.setCurrentWorld(1);
-            playerX = 1;
-            playerY = 2;
-        } else {
-            playerX = newX;
-            playerY = newY;
+        if (input.equals("w")) {
+            newY = playerY - 1;
+        } else if (input.equals("a")) {
+            newX = playerX - 1;
+        } else if (input.equals("s")) {
+            newY = playerY + 1;
+        } else if (input.equals("d")) {
+            newX = playerX + 1;
         }
 
-        worlds.updateWorld(playerX, playerY, '\u2620');
+        if (currentWorld.isValidMove(newX, newY)) {
+            currentWorld.updateWorld(playerX, playerY, '.');
+
+            List<World.Portal> portals = currentWorld.getPortals();
+            for (World.Portal portal : portals) {
+                if (portal.getX() == newX && portal.getY() == newY) {
+                    World destinationWorld = Jogo.getWorldByIndex(portal.getDestinationWorld());
+                    int destX = portal.getDestinationX();
+                    int destY = portal.getDestinationY();
+
+                    currentWorld = destinationWorld;
+                    newX = destX;
+                    newY = destY;
+                    break;
+                }
+            }
+
+            playerX = newX;
+            playerY = newY;
+            
+
+            //currentWorld.updateWorld(playerX, playerY, 'P');
+        }
+        return currentWorld;
     }
-
-
-}
 }
