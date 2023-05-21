@@ -50,19 +50,19 @@ public void movePlayer(String input, Worlds worlds) {
     if (worlds.isValidMove(newX, newY)) {
         worlds.updateWorld(playerX, playerY, '.');
 
-        if (worlds.getCurrentWorld() == 1 && newX == 0 && newY == 2) {
+        if (worlds.getCurrentWorldIndex() == 1 && newX == 0 && newY == 2) {
             worlds.setCurrentWorld(2);
             playerX = 5;
             playerY = 3;
-        } else if (worlds.getCurrentWorld() == 2 && newX == 6 && newY == 3) {
+        } else if (worlds.getCurrentWorldIndex() == 2 && newX == 6 && newY == 3) {
             worlds.setCurrentWorld(1);
             playerX = 1;
             playerY = 2;
-        } else if (worlds.getCurrentWorld() == 2 && newX == 4 && newY == 12) {
+        } else if (worlds.getCurrentWorldIndex() == 2 && newX == 4 && newY == 12) {
             worlds.setCurrentWorld(3);
             playerX = 4;
             playerY = 1;       
-        } else if (worlds.getCurrentWorld()== 3 && newX == 4 && newY == 0 ) {
+        } else if (worlds.getCurrentWorldIndex()== 3 && newX == 4 && newY == 0 ) {
             worlds.setCurrentWorld(2);
             playerX = 4;
             playerY = 11;

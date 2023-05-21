@@ -1,6 +1,7 @@
 package src.Controller;
 
 import java.util.Scanner;
+import java.util.concurrent.ConcurrentNavigableMap;
 
 public class Worlds {
 
@@ -111,7 +112,18 @@ public class Worlds {
         return world3;
     }
 
-    public static int getCurrentWorld() {
+    public char [][] getCurrentWorld() {
+        if (currentWorld == 1) {
+            return world1;
+        } else if (currentWorld == 2) {
+            return world2;
+        } else if (currentWorld == 3) {
+            return world3;
+        }
+        return null;
+    }
+
+    public static int getCurrentWorldIndex() {
         return currentWorld;
     }
 
