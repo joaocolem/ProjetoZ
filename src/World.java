@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package projetoz;
+
 
 /**
  *
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class World {
-    private static final char[] BARRIERS = { '#', '&','c' };
+    private static final char[] BARRIERS = { '#', '&' };
     private static int currentWorld = 1;
     private char[][] map;
     private List<Portal> portals;

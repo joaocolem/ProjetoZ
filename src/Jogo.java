@@ -1,4 +1,4 @@
-package projetoz;
+
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -34,6 +34,9 @@ public class Jogo {
         }
     }
 
+    
+    
+    //le o arquivo txt e tranforma em objetos WORLDS
     private static void initializeWorldsFromFile(String filename) {
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
             String line;
