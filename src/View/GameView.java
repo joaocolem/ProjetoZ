@@ -3,7 +3,6 @@ package src.View;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 import src.Controller.Personagem;
@@ -13,7 +12,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 public class GameView {
     public static Personagem personagem = new Personagem(2, 2);
@@ -21,16 +19,11 @@ public class GameView {
     public static JPanel panel = new JPanel();
     public static JFrame frame = new JFrame("Swing Example");
     public static JLabel[][] labels;
+    public static int playerX, playerY;
 
     public static void main(String[] args) {
 
-        if (worlds.getCurrentWorld() == 1) {
-            displayMundo(worlds.getWorld1());
-        } else if (worlds.getCurrentWorld() == 2) {
-            displayMundo(worlds.getWorld2());
-        } else if (worlds.getCurrentWorld() == 3) {
-            displayMundo(worlds.getWorld3());
-        }
+        displayMundo(worlds.getCurrentWorld());
     }
 
     public static void displayMundo (char[][] world){
@@ -39,7 +32,7 @@ public class GameView {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         //JPanel
-        panel.setBackground(Color.BLACK);
+        panel.setBackground(Color.BLACK); // cor de fundo do Jpanel
         panel.setFocusable(true);
         panel.requestFocusInWindow();
 
@@ -47,26 +40,28 @@ public class GameView {
         panel.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
-              if (e.getKeyCode() == KeyEvent.VK_W) {
-                personagem.movePlayer("w", worlds);
-                atualizarMundo(world);
-              }
-              else if (e.getKeyCode() == KeyEvent.VK_A){
-                personagem.movePlayer("a", worlds);
-                atualizarMundo(world);
-              }
-              else if (e.getKeyCode() == KeyEvent.VK_S){
-                personagem.movePlayer("s", worlds);
-                atualizarMundo(world);
-              }
-              else if (e.getKeyCode() == KeyEvent.VK_D){
-                personagem.movePlayer("d", worlds);
-                atualizarMundo(world);
-              }
+                char [][] currentWorld = worlds.getCurrentWorld(); // retorna o mundo atual
+
+                if (e.getKeyCode() == KeyEvent.VK_W) {
+                    personagem.movePlayer("w", worlds);
+                    atualizarMundo(currentWorld);
+                }
+                else if (e.getKeyCode() == KeyEvent.VK_A){
+                    personagem.movePlayer("a", worlds);
+                    atualizarMundo(currentWorld);
+                }
+                else if (e.getKeyCode() == KeyEvent.VK_S){
+                    personagem.movePlayer("s", worlds);
+                    atualizarMundo(currentWorld);
+                }
+                else if (e.getKeyCode() == KeyEvent.VK_D){
+                    personagem.movePlayer("d", worlds);
+                    atualizarMundo(currentWorld);
+                }
             }
         });
 
-        gerarMundo(world);
+        gerarMundo(world);// cria o mundo pela primeira vez
 
         //Adicionando Panel ao Frame
         frame.setContentPane(panel);
@@ -88,7 +83,7 @@ public class GameView {
         for (int i = 0; i < world.length; i++) {
             for (int j = 0; j < world[0].length; j++) {
                 
-                caracter = i == personagem.getPlayerY() && j == personagem.getPlayerX() ? "P" : String.valueOf(world[i][j]); // Posiciona o personagem
+                caracter = i == personagem.getPlayerY() && j == personagem.getPlayerX() ? "P" : String.valueOf(world[i][j]); //Posiciona o personagem
 
                 labels[i][j] = new JLabel(caracter);//setando valor da label(cada caracter)
 
