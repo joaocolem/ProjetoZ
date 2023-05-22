@@ -1,6 +1,8 @@
-package projetoz;
-
+package src.Controller;
 import java.util.List;
+
+import src.Controller.World.Portal;
+
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license

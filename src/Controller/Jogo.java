@@ -1,4 +1,4 @@
-package projetoz;
+package src.Controller;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
