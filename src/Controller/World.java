@@ -13,7 +13,6 @@ import java.util.List;
 
 public class World {
     private static final char[] BARRIERS = { '#', '&' };
-    private static int currentWorld = 1;
     private char[][] map;
     private List<Portal> portals;
 
@@ -91,14 +90,6 @@ public class World {
             }
         }
         return false;
-    }
-
-    public static int getCurrentWorld() {
-        return currentWorld;
-    }
-
-    public static void setCurrentWorld(int currentWorld) {
-        World.currentWorld = currentWorld;
     }
 
     public static class Portal {
