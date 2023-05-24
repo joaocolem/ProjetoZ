@@ -14,14 +14,12 @@ import src.Controller.World.Portal;
  * @author joao_
  */
 public class Personagem {
-
     public Personagem(int playerX, int playerY) {
         this.playerX = playerX;
         this.playerY = playerY;
     }
     private int playerX;
     private int playerY;
-
 
 
     public int getPlayerX() {
@@ -65,6 +63,7 @@ public class Personagem {
                     int destY = portal.getDestinationY();
 
                     currentWorld = destinationWorld;
+                    System.out.println(currentWorld);
                     newX = destX;
                     newY = destY;
                     break;
