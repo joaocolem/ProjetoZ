@@ -28,7 +28,6 @@ public class GameView {
         World.initializeWorldsFromFile("mapas.txt");
         World currentWorld = World.getFirstWorld();
 
-
         displayMundo(currentWorld);
     }
 
