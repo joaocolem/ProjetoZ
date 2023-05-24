@@ -58,12 +58,13 @@ public class Personagem {
             List<World.Portal> portals = currentWorld.getPortals();
             for (World.Portal portal : portals) {
                 if (portal.getX() == newX && portal.getY() == newY) {
-                    World destinationWorld = Jogo.getWorldByIndex(portal.getDestinationWorld());
+                    World destinationWorld = World.getWorldByIndex(portal.getDestinationWorld());
+
                     int destX = portal.getDestinationX();
                     int destY = portal.getDestinationY();
 
                     currentWorld = destinationWorld;
-                    System.out.println(currentWorld);
+                    // System.out.println(currentWorld);
                     newX = destX;
                     newY = destY;
                     break;

@@ -25,7 +25,6 @@ public class GameView {
     public static int playerX, playerY;
 
     public static void main(String[] args) {
-        World.initializeWorldsFromFile("mapas.txt");
         World currentWorld = World.getFirstWorld();
 
         displayMundo(currentWorld);
@@ -50,6 +49,7 @@ public class GameView {
                 }
                 else if (e.getKeyCode() == KeyEvent.VK_A){
                     nextWorld= personagem.movePlayer("a", currentWorld);
+                    System.out.println(nextWorld);
                     atualizarMundo(nextWorld.getMap());
                 }
                 else if (e.getKeyCode() == KeyEvent.VK_S){

@@ -37,7 +37,7 @@ public class World {
     }
     
     //le o arquivo txt e tranforma em objetos WORLDS
-    public static void initializeWorldsFromFile(String filename) {
+    private static void initializeWorldsFromFile(String filename) {
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
             String line;
             List<char[]> tempMap = new ArrayList<>();
@@ -88,6 +88,7 @@ public class World {
     }
 }
     public static World getFirstWorld() {
+        initializeWorldsFromFile("mapas.txt");
         return WORLDS.get(0);
     }
     
