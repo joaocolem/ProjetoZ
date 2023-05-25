@@ -14,14 +14,12 @@ import src.Controller.World.Portal;
  * @author joao_
  */
 public class Personagem {
-
     public Personagem(int playerX, int playerY) {
         this.playerX = playerX;
         this.playerY = playerY;
     }
     private int playerX;
     private int playerY;
-
 
 
     public int getPlayerX() {
@@ -60,11 +58,13 @@ public class Personagem {
             List<World.Portal> portals = currentWorld.getPortals();
             for (World.Portal portal : portals) {
                 if (portal.getX() == newX && portal.getY() == newY) {
-                    World destinationWorld = Jogo.getWorldByIndex(portal.getDestinationWorld());
+                    World destinationWorld = World.getWorldByIndex(portal.getDestinationWorld());
+
                     int destX = portal.getDestinationX();
                     int destY = portal.getDestinationY();
 
                     currentWorld = destinationWorld;
+                    
                     newX = destX;
                     newY = destY;
                     break;
