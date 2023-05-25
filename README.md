@@ -132,7 +132,7 @@ Se for o caso, liste tarefas/funcionalidades que ainda precisam ser implementada
 
 Liste o time responsável pelo desenvolvimento do projeto
 
-| [<img src="https://avatars2.githubusercontent.com/u/46378210?s=400&u=071f7791bb03f8e102d835bdb9c2f0d3d24e8a34&v=4" width=115><br><sub>João Colem</sub>](https://github.com/joaocolem) |  [<img src="https://avatars.githubusercontent.com/u/79370990?v=4" width=115><br><sub>Gustavo Lima</sub>](https://github.com/hgustavo98) |  [<img src="https://avatars2.githubusercontent.com/u/46378210?s=400&u=071f7791bb03f8e102d835bdb9c2f0d3d24e8a34&v=4" width=115><br><sub>Diana Regina</sub>](https://github.com/Diana-ops) |
+| [<img src="https://avatars.githubusercontent.com/u/105292741?v=4" width=115><br><sub>João Colem</sub>](https://github.com/joaocolem) |  [<img src="https://avatars.githubusercontent.com/u/79370990?v=4" width=115><br><sub>Gustavo Lima</sub>](https://github.com/hgustavo98) |  [<img src="https://avatars.githubusercontent.com/u/130676497?v=4" width=115><br><sub>João Paulo</sub>](https://github.com/dezumiude) | [<img src="https://avatars.githubusercontent.com/u/134110807?v=4" width=115><br><sub>João Colem</sub>](https://github.com/danilohenriki) |  [<img src="https://avatars.githubusercontent.com/u/79370990?v=4" width=115><br><sub>Danilo</sub>](https://github.com/hgustavo98) |  [<img src="https://avatars.githubusercontent.com/u/130676497?v=4" width=115><br><sub>João Paulo</sub>](https://github.com/dezumiude)
 | :---: | :---: | :---: 
 
 ## Licença 
