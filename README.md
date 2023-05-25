@@ -128,9 +128,7 @@ Se for o caso, liste tarefas/funcionalidades que ainda precisam ser implementada
 
 :memo: Tarefa 3 
 
-## Desenvolvedores/Contribuintes :octocat:
-
-Liste o time responsável pelo desenvolvimento do projeto
+## Desenvolvedores:octocat:
 
 | [<img src="https://avatars.githubusercontent.com/u/105292741?v=4" width=115><br><sub>João Colem</sub>](https://github.com/joaocolem) |  [<img src="https://avatars.githubusercontent.com/u/79370990?v=4" width=115><br><sub>Gustavo Lima</sub>](https://github.com/hgustavo98) |  [<img src="https://avatars.githubusercontent.com/u/130676497?v=4" width=115><br><sub>João Paulo</sub>](https://github.com/dezumiude) | 
 | :---: | :---: | :---: 
