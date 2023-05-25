@@ -132,9 +132,9 @@ Se for o caso, liste tarefas/funcionalidades que ainda precisam ser implementada
 
 | [<img src="https://avatars.githubusercontent.com/u/105292741?v=4" width=115><br><sub>João Colem</sub>](https://github.com/joaocolem) |  [<img src="https://avatars.githubusercontent.com/u/79370990?v=4" width=115><br><sub>Gustavo Lima</sub>](https://github.com/hgustavo98) |  [<img src="https://avatars.githubusercontent.com/u/130676497?v=4" width=115><br><sub>João Paulo</sub>](https://github.com/dezumiude) | 
 | :---: | :---: | :---: 
-[<img src="https://avatars.githubusercontent.com/u/134110807?v=4" width=115><br><sub>Danilo</sub>](https://github.com/danilohenriki) |  [<img src="https://avatars.githubusercontent.com/u/102836495?v=4" width=115><br><sub>Lucas da Costa</sub>](https://github.com/DreaMagici4n) |  [<img src="https://avatars.githubusercontent.com/u/134005292?v=4" width=115><br><sub>Filipe Borges</sub>](https://github.com/FilipeBrges)| 
-| 
-[<img src="https://avatars.githubusercontent.com/u/93010166?v=4" width=115><br><sub>Vitor Franco</sub>](https://github.com/vfranco00)
+[<img src="https://avatars.githubusercontent.com/u/134110807?v=4" width=115><br><sub>Danilo</sub>](https://github.com/danilohenriki) |  [<img src="https://avatars.githubusercontent.com/u/102836495?v=4" width=115><br><sub>Lucas da Costa</sub>](https://github.com/DreaMagici4n) |  [<img src="https://avatars.githubusercontent.com/u/134005292?v=4" width=115><br><sub>Filipe Borges</sub>](https://github.com/FilipeBrges)|| 
+| :---: | :---: | :---: 
+| [<img src="https://avatars.githubusercontent.com/u/93010166?v=4" width=115><br><sub>Vitor Franco</sub>](https://github.com/vfranco00)
 
 
 ## Licença 
