@@ -64,7 +64,7 @@ public class Personagem {
                     int destY = portal.getDestinationY();
 
                     currentWorld = destinationWorld;
-                    // System.out.println(currentWorld);
+                    
                     newX = destX;
                     newY = destY;
                     break;
