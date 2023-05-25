@@ -39,13 +39,13 @@
 
 ## Funcionalidades
 
-:heavy_check_mark: Funcionalidade 1  
+:heavy_check_mark: Explorar mundos  
 
-:heavy_check_mark: Funcionalidade 2  
+:heavy_check_mark: Realizar puzzles
 
-:heavy_check_mark: Funcionalidade 3  
+:warning: Interagir com ambiente 
 
-:heavy_check_mark: Funcionalidade 4  
+:warning: Interagir com outros personagens  
 
 ## Layout ou Deploy da Aplicação :dash:
 
