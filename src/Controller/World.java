@@ -104,7 +104,7 @@ public class World {
 
     public void addPortal(Portal portal) {
     portals.add(portal);
-}
+    }
     
     
     public static char[] getBarriers() {
@@ -192,3 +192,12 @@ public class World {
         }
     }
 }
+
+// // Checar se tem algo p coletar
+//             // coleta e armazena no vetor collectedItens
+//             if (worlds.canCollect(playerX, playerY, collectedItems)) {
+//                 collectedItems.add(worlds.getWorldValue(playerX, playerY));
+//                 positionChar = '.';
+//             } else {
+//                 positionChar = worlds.getWorldValue(playerX, playerY);
+//             }
