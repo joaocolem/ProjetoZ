@@ -67,8 +67,9 @@ public class GameView {
         frame.setContentPane(panel);
 
         //Tamanho da janel
-        // frame.setPreferredSize(new Dimension(1440, 800));
         frame.setLayout(new GridLayout(8, 28));
+        frame.setPreferredSize(new Dimension(800, 300));
+
 
         frame.pack();
         frame.setLocationRelativeTo(null);
