@@ -1,9 +1,10 @@
 package src.Controller;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class Inventory {
-    private static ArrayList<Character> collectedItems;
+    private static Stack<Character> collectedItems = new Stack<>();
     public Inventory(){
 
     }
@@ -27,11 +28,11 @@ public class Inventory {
 
         else if (
             (currentWorld[y][x] != ' ') 
-            // && (currentWorld[y][x] != '#') 
             && (currentWorld[y][x] != '.')
             && ((int) currentWorld[y][x] == expectedASCIIChar)
             ) 
         {
+            addLetterToInventory(currentWorld[y][x]);
             return true;
         }
 
@@ -41,8 +42,12 @@ public class Inventory {
 
     }
 
-    public static ArrayList<Character> getCollectedItems(){
-        return collectedItems;
+    private void addLetterToInventory (Character letter) {
+        collectedItems.push(letter);
+    }
+
+    public static Character getCollectedItems(){
+        return collectedItems.pop();
     }
 
 }
