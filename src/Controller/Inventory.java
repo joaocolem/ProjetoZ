@@ -1,10 +1,10 @@
 package src.Controller;
 
-import java.util.ArrayList;
 import java.util.Stack;
 
 public class Inventory {
     private static Stack<Character> collectedItems = new Stack<>();
+
     public Inventory(){
 
     }
@@ -26,11 +26,11 @@ public class Inventory {
             return true;
         }
 
-        else if (
-            (currentWorld[y][x] != ' ') 
-            && (currentWorld[y][x] != '.')
-            && ((int) currentWorld[y][x] == expectedASCIIChar)
-            ) 
+        if (currentWorld[y][x] == ' ') {
+            return true;
+        }
+        
+        else if ((int) currentWorld[y][x] == expectedASCIIChar)
         {
             addLetterToInventory(currentWorld[y][x]);
             return true;
