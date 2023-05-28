@@ -80,7 +80,7 @@ public class World {
     }
 
     public static World getFirstWorld() {
-        initializeWorldsFromFile("src/layouts/world/mapas.txt");
+        initializeWorldsFromFile("src/View/layouts/world/mapas.txt");
         return WORLDS.get(0);
     }
 

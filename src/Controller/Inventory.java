@@ -1,9 +1,15 @@
 package src.Controller;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.List;
 import java.util.ArrayList;
 
 public class Inventory {
     private static ArrayList<Character> collectedItems = new ArrayList<>();
+    private static String inInventory = "";
 
     public Inventory(){
 
@@ -51,5 +57,37 @@ public class Inventory {
 
     public static ArrayList<Character> getCollectedItems(){
         return collectedItems;
+    }
+
+    public static char[][] getLayout () {
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/View/layouts/inventory/inventory.txt"))) {
+            String line;
+            List<char[]> chars = new ArrayList<>();
+
+            while ((line = reader.readLine()) != null) {
+                    chars.add(line.toCharArray());
+            }
+            char[][] layout = new char[chars.size()][];
+            chars.toArray(layout);
+
+            return layout;
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public static void setInInventory(String letter) {
+        inInventory += letter;
+    }
+
+    public static boolean isInInventory(String letter) {
+        return inInventory.contains(letter);
+    }
+
+    public static String getInInventory () {
+        return inInventory;
     }
 }

@@ -1,26 +1,11 @@
 package src.Controller;
+
 import java.util.List;
 
-import src.Controller.World.Portal;
-
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author joao_
- */
 public class Personagem {
     private int playerX;
     private int playerY;
     private Inventory inventory = new Inventory();
-    private char positionChar = '.'; 
-    // variavel responsavel por armazenar o valor posição que o jogador ira assumir
-    // para que caso nao for uma letra do alfabeto na sequencia da ultima armazenada no vetor 
-    //apos sair desta posição ela retorna o valor original para a mesma posição.
 
     public Personagem(int playerX, int playerY) {
         this.playerX = playerX;
@@ -34,22 +19,6 @@ public class Personagem {
     public int getPlayerY() {
         return playerY;
     }
-
-//     public ArrayList<Character> getCollectedItems() {
-//         return collectedItems;
-//     }
-// //metodo reponsavel por mostrar os itens coletados.
-//     public void printCollectedItems() {
-//         if (collectedItems.isEmpty()) {
-//             System.out.println("Nenhum item coletado.");
-//         } else {
-//             System.out.print("Itens coletados: ");
-//             for (int i = 0; i < collectedItems.size(); i++) {
-//                 System.out.print(collectedItems.get(i) + " ");
-//             }
-//             System.out.println();
-//         }
-//     }
 
     public void setPlayerX(int x) {
         playerX = x;
@@ -85,7 +54,7 @@ public class Personagem {
                     int destY = portal.getDestinationY();
 
                     currentWorld = destinationWorld;
-                    
+
                     newX = destX;
                     newY = destY;
                     break;
@@ -94,9 +63,7 @@ public class Personagem {
 
             playerX = newX;
             playerY = newY;
-            
 
-            //currentWorld.updateWorld(playerX, playerY, 'P');
         }
         return currentWorld;
     }
