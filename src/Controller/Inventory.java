@@ -1,23 +1,26 @@
 package src.Controller;
 
-import java.util.Stack;
+import java.util.ArrayList;
 
 public class Inventory {
-    private static Stack<Character> collectedItems = new Stack<>();
+    private static ArrayList<Character> collectedItems = new ArrayList<>();
 
     public Inventory(){
 
     }
 
-    //metodo criado para verificar de pode ou nao coletar a letra presente em cada mapa.
-    //a letra so podera ser coletada caso de acordo com a tabela ASCII o valor decimal seja 1 a mais que o ultimo 
-    //valor adicionado ao meu arryList.
+    /**
+    Metodo criado para verificar de pode ou nao coletar a letra presente em cada mapa. A letra so podera ser coletada caso de acordo com a tabela ASCII o valor decimal seja 1 a mais que o ultimo 
+    valor adicionado ao meu arryList.
+    @param x posicao x do personagem
+    @param y posicao y do personagem
+    @param currentWorld mundo atual
+    @return se pode ou nao coletar a letra
+    */
+    
     public boolean canCollect(int x, int y, char[][] currentWorld) {
         int expectedASCIIChar = 65;
 
-        // verifica se meu arrayList nao esta vazio, se nao estiver pega o
-        // caracter da ultima possição do vetor e converte para inteiro e soma mais 1
-        // para atualizar o valor do proximo caracter a ser coletado
         if (!collectedItems.isEmpty()) {
             expectedASCIIChar = ((int) collectedItems.get(collectedItems.size() - 1)) + 1;
         }
@@ -29,7 +32,7 @@ public class Inventory {
         if (currentWorld[y][x] == ' ') {
             return true;
         }
-        
+
         else if ((int) currentWorld[y][x] == expectedASCIIChar)
         {
             addLetterToInventory(currentWorld[y][x]);
@@ -43,11 +46,10 @@ public class Inventory {
     }
 
     private void addLetterToInventory (Character letter) {
-        collectedItems.push(letter);
+        collectedItems.add(letter);
     }
 
-    public static Character getCollectedItems(){
-        return collectedItems.pop();
+    public static ArrayList<Character> getCollectedItems(){
+        return collectedItems;
     }
-
 }
