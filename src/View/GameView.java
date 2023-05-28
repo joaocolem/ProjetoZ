@@ -60,7 +60,7 @@ public class GameView {
                     currentWorld = personagem.movePlayer("d", currentWorld);
                     mountDisplay(currentWorld.getMap(), "world");
                 } else if (e.getKeyCode() == KeyEvent.VK_I) {
-                    System.out.println("\n<nCollected letters: ");
+                    System.out.println("\n\nCollected letters: ");
                     for (int i = 0; i < Inventory.getCollectedItems().size(); i++) {
                         System.out.print(" " + Inventory.getCollectedItems().get(i));
                     }
