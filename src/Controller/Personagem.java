@@ -73,8 +73,8 @@ public class Personagem {
         }
         if (currentWorld.getMap()[newY][newX] == '?') {
             // Chamar o jogo da forca
-            Forca forca = new Forca();
-            forca.forca(Forca.nivelFacil());
+            
+            Forca.forca(Forca.nivelFacil());
         }
         
 
