@@ -1,5 +1,4 @@
-package Games;
-
+package src.Controller.Games;
 
 import java.util.ArrayList;
 import java.util.Collections;

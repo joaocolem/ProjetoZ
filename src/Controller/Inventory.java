@@ -39,6 +39,10 @@ public class Inventory {
             return true;
         }
 
+        if (currentWorld[y][x] == '?') {
+            return true;
+        }
+
         else if ((int) currentWorld[y][x] == expectedASCIIChar)
         {
             addLetterToInventory(currentWorld[y][x]);

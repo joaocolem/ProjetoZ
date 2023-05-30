@@ -1,6 +1,9 @@
 package src.Controller;
-
 import java.util.List;
+
+import src.Controller.Games.Forca;
+import src.Controller.Games.JogoDaMemoria;
+import src.Controller.Games.JogoDaVelha;
 
 public class Personagem {
     private int playerX;
@@ -42,6 +45,8 @@ public class Personagem {
             newX = playerX + 1;
         }
 
+
+
         if (currentWorld.isValidMove(newX, newY) && inventory.canCollect(newX, newY, currentWorld.getMap())) {
             currentWorld.updateWorld(playerX, playerY, '.');
 
@@ -64,7 +69,24 @@ public class Personagem {
             playerX = newX;
             playerY = newY;
 
+         
         }
+        if (currentWorld.getMap()[newY][newX] == '?') {
+            // Chamar o jogo da forca
+            Forca forca = new Forca();
+            forca.forca(Forca.nivelFacil());
+        }
+        
+
+        if (currentWorld.getMap()[newY][newX] == '!') {
+            // Chamar o jogo da forca
+            JogoDaVelha velha = new JogoDaVelha();  
+            velha.jogar();
+        }
+
+
         return currentWorld;
     }
+
+    
 }

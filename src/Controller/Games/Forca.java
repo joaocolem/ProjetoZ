@@ -1,5 +1,4 @@
-package Games;
-
+package src.Controller.Games;
 
 import java.util.Random;
 import java.util.Scanner;
