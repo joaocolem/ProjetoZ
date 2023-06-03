@@ -1,28 +1,19 @@
 package src.Controller;
 import java.util.List;
 
-import src.Controller.World.Portal;
+import src.Controller.Games.Forca;
+import src.Controller.Games.JogoDaMemoria;
+import src.Controller.Games.JogoDaVelha;
 
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author joao_
- */
 public class Personagem {
+    private int playerX;
+    private int playerY;
+    private Inventory inventory = new Inventory();
 
     public Personagem(int playerX, int playerY) {
         this.playerX = playerX;
         this.playerY = playerY;
     }
-    private int playerX;
-    private int playerY;
-
-
 
     public int getPlayerX() {
         return playerX;
@@ -54,17 +45,21 @@ public class Personagem {
             newX = playerX + 1;
         }
 
-        if (currentWorld.isValidMove(newX, newY)) {
+
+
+        if (currentWorld.isValidMove(newX, newY) && inventory.canCollect(newX, newY, currentWorld.getMap())) {
             currentWorld.updateWorld(playerX, playerY, '.');
 
             List<World.Portal> portals = currentWorld.getPortals();
             for (World.Portal portal : portals) {
                 if (portal.getX() == newX && portal.getY() == newY) {
-                    World destinationWorld = Jogo.getWorldByIndex(portal.getDestinationWorld());
+                    World destinationWorld = World.getWorldByIndex(portal.getDestinationWorld());
+
                     int destX = portal.getDestinationX();
                     int destY = portal.getDestinationY();
 
                     currentWorld = destinationWorld;
+
                     newX = destX;
                     newY = destY;
                     break;
@@ -73,13 +68,25 @@ public class Personagem {
 
             playerX = newX;
             playerY = newY;
-            
 
-            //currentWorld.updateWorld(playerX, playerY, 'P');
+         
         }
+        if (currentWorld.getMap()[newY][newX] == '?') {
+            // Chamar o jogo da forca
+            
+            Forca.forca(Forca.nivelFacil());
+        }
+        
+
+        if (currentWorld.getMap()[newY][newX] == '!') {
+            // Chamar o jogo da forca
+            JogoDaVelha velha = new JogoDaVelha();  
+            velha.jogar();
+        }
+
+
         return currentWorld;
     }
-}
 
-}
+    
 }

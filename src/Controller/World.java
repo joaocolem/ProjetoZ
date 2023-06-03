@@ -1,21 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package src.Controller;
 
-/**
- *
- * @author 0066824
- */
 import java.util.ArrayList;
 import java.util.List;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class World {
     private static final char[] BARRIERS = { '#', '&' };
-    private static int currentWorld = 1;
     private char[][] map;
     private List<Portal> portals;
+    private static List<World> WORLDS = new ArrayList<>();
+
+    public World() {
+
+    }
 
     public World(char[][] map) {
         this.map = map;
@@ -23,13 +22,68 @@ public class World {
     }
 
     public World(char[][] map, List<Portal> portals /* Outros argumentos */) {
-    this.map = map;
-    this.portals = portals;
-    // Inicialize os outros atributos com os argumentos fornecidos
+        this.map = map;
+        this.portals = portals;
+        // Inicialize os outros atributos com os argumentos fornecidos
     }
-    
-    
-    
+
+    // le o arquivo txt e tranforma em objetos WORLDS
+    private static void initializeWorldsFromFile(String filename) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+            String line;
+            List<char[]> tempMap = new ArrayList<>();
+            List<World.Portal> portals = null;
+
+            while ((line = reader.readLine()) != null) {
+                if (line.startsWith("Map")) {
+                    if (tempMap.size() > 0 && portals != null) {
+                        char[][] map = new char[tempMap.size()][];
+                        tempMap.toArray(map);
+                        World world = new World(map, portals);
+                        WORLDS.add(world);
+                    }
+
+                    tempMap.clear();
+                    portals = new ArrayList<>();
+                } else if (line.startsWith("Portal")) {
+                    String[] portalValues = line.split(" ");
+                    int x = Integer.parseInt(portalValues[1]);
+                    int y = Integer.parseInt(portalValues[2]);
+                    int destX = Integer.parseInt(portalValues[3]);
+                    int destY = Integer.parseInt(portalValues[4]);
+                    int destinationWorldIndex = Integer.parseInt(portalValues[5]);
+
+                    World.Portal portal = new World.Portal(x, y, destX, destY, destinationWorldIndex);
+                    portals.add(portal);
+                } else {
+                    tempMap.add(line.toCharArray());
+                }
+            }
+
+            if (tempMap.size() > 0 && portals != null) {
+                char[][] map = new char[tempMap.size()][];
+                tempMap.toArray(map);
+                World world = new World(map, portals);
+                WORLDS.add(world);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    static World getWorldByIndex(int index) {
+        if (index >= 0 && index < WORLDS.size()) {
+            return WORLDS.get(index);
+        } else {
+            return null;
+        }
+    }
+
+    public static World getFirstWorld() {
+        initializeWorldsFromFile("src/View/layouts/world/mapas.txt");
+        return WORLDS.get(0);
+    }
+
     public char[][] getMap() {
         return map;
     }
@@ -38,13 +92,10 @@ public class World {
         return portals;
     }
 
-
-
     public void addPortal(Portal portal) {
-    portals.add(portal);
-}
-    
-    
+        portals.add(portal);
+    }
+
     public static char[] getBarriers() {
         return BARRIERS;
     }
@@ -59,27 +110,6 @@ public class World {
                 && !isBarrier(map[y][x], barriers);
     }
 
-    public void displayWorld(Personagem personagem) {
-        for (int i = 0; i < map.length; i++) {
-            for (int j = 0; j < map[i].length; j++) {
-                if (i == personagem.getPlayerY() && j == personagem.getPlayerX()) {
-                    System.out.print("\u001B[34mP \u001B[0m");
-                } else if (map[i][j] == '#') {
-                    System.out.print("\u001B[42m  \u001B[0m");
-                } else if (map[i][j] == '.') {
-                    System.out.print("  ");
-                } else if (map[i][j] == '&') {
-                    System.out.print("\u001B[44m  \u001B[0m");
-                } else {
-                    System.out.print(map[i][j] + " ");
-                }
-            }
-            System.out.println();
-        }
-    }
-
-
-
     public void updateWorld(int x, int y, char newChar) {
         map[y][x] = newChar;
     }
@@ -91,14 +121,6 @@ public class World {
             }
         }
         return false;
-    }
-
-    public static int getCurrentWorld() {
-        return currentWorld;
-    }
-
-    public static void setCurrentWorld(int currentWorld) {
-        World.currentWorld = currentWorld;
     }
 
     public static class Portal {
@@ -115,7 +137,6 @@ public class World {
             this.destY = destY;
             this.destinationWorld = destinationWorld;
         }
-        
 
         public int getX() {
             return x;
