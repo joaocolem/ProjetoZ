@@ -4,28 +4,21 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-import src.Controller.Inventory;
-import src.Controller.Personagem;
-import src.Controller.World;
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+import src.Controller.Inventory;
+import src.Controller.Personagem;
+import src.Controller.World;
 
 public class GameView {
-    public static Personagem personagem = new Personagem(2, 2);
-    public static World world = new World();
-    public static World currentWorld = World.getFirstWorld();
-
-    public static JPanel worldPanel = new JPanel();
-    public static JPanel inventoryPanel = new JPanel();
-
-    public static JFrame frame = new JFrame("Swing Example");
-    public static int playerX, playerY;
+    private static Personagem personagem = new Personagem(2, 2);
+    private static World currentWorld = World.getFirstWorld();
+    private static JPanel worldPanel = new JPanel();
+    private static JFrame frame = new JFrame("ProjetoZ");
 
     public static void main(String[] args) {
         displayWorld();
@@ -92,7 +85,7 @@ public class GameView {
     @param layoutType recebe o tipo do layout desjado
     */
     
-    public static void mountDisplay(char[][] layout, String layoutType) {
+    private static void mountDisplay(char[][] layout, String layoutType) {
         String caracter;
         JLabel[][] gameLabels = new JLabel[layout.length][layout[0].length];
 

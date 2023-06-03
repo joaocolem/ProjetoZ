@@ -50,8 +50,8 @@ public class Personagem {
         if (currentWorld.isValidMove(newX, newY) && inventory.canCollect(newX, newY, currentWorld.getMap())) {
             currentWorld.updateWorld(playerX, playerY, '.');
 
-            List<World.Portal> portals = currentWorld.getPortals();
-            for (World.Portal portal : portals) {
+            List<Portal> portals = currentWorld.getPortals();
+            for (Portal portal : portals) {
                 if (portal.getX() == newX && portal.getY() == newY) {
                     World destinationWorld = World.getWorldByIndex(portal.getDestinationWorld());
 

@@ -11,6 +11,7 @@ public class World {
     private char[][] map;
     private List<Portal> portals;
     private static List<World> WORLDS = new ArrayList<>();
+    public static Portal portal;
 
     public World() {
 
@@ -32,7 +33,7 @@ public class World {
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
             String line;
             List<char[]> tempMap = new ArrayList<>();
-            List<World.Portal> portals = null;
+            List<Portal> portals = null;
 
             while ((line = reader.readLine()) != null) {
                 if (line.startsWith("Map")) {
@@ -53,7 +54,7 @@ public class World {
                     int destY = Integer.parseInt(portalValues[4]);
                     int destinationWorldIndex = Integer.parseInt(portalValues[5]);
 
-                    World.Portal portal = new World.Portal(x, y, destX, destY, destinationWorldIndex);
+                    portal = new Portal(x, y, destX, destY, destinationWorldIndex);
                     portals.add(portal);
                 } else {
                     tempMap.add(line.toCharArray());
@@ -121,41 +122,5 @@ public class World {
             }
         }
         return false;
-    }
-
-    public static class Portal {
-        private int x;
-        private int y;
-        private int destX;
-        private int destY;
-        private int destinationWorld;
-
-        public Portal(int x, int y, int destX, int destY, int destinationWorld) {
-            this.x = x;
-            this.y = y;
-            this.destX = destX;
-            this.destY = destY;
-            this.destinationWorld = destinationWorld;
-        }
-
-        public int getX() {
-            return x;
-        }
-
-        public int getY() {
-            return y;
-        }
-
-        public int getDestinationX() {
-            return destX;
-        }
-
-        public int getDestinationY() {
-            return destY;
-        }
-
-        public int getDestinationWorld() {
-            return destinationWorld;
-        }
     }
 }
