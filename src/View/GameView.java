@@ -16,7 +16,7 @@ import src.Controller.World;
 import src.Controller.Generator.MapGenerator;
 
 public class GameView {
-    private static Personagem personagem = new Personagem(10, 10);
+    private static Personagem personagem = new Personagem(19, 19);
     private static World currentWorld = World.getFirstWorld();
     private static JPanel worldPanel = new JPanel();
     private static JFrame frame = new JFrame("ProjetoZ");
