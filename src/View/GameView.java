@@ -70,7 +70,7 @@ public class GameView {
         frame.setContentPane(worldPanel);
 
         // Tamanho da janel
-        frame.setLayout(new GridLayout(8, 28));
+        frame.setLayout(new GridLayout(20, 36));
         frame.setPreferredSize(new Dimension(800, 300));
 
         frame.pack();
