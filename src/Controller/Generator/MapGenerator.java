@@ -5,18 +5,23 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Stack;
 
+import javax.swing.JOptionPane;
+
 /**
- * Cria um arquivo.txt de acordo com o JSON inserido no metodo convertJsonToTxtFile. Deve-se criar o mundo no site: https://classicwook.itch.io/ascii-map-maker.
+ * Cria um arquivo.txt, na raiz, de acordo com o JSON inserido no metodo convertJsonToTxtFile. Deve-se criar o mundo no site: https://classicwook.itch.io/ascii-map-maker.
  * <p>O mundo tem que conter:
- * <p> 36 colunas;
- * <p> 20 linhas;
+ * <p> 50 colunas;
+ * <p> 50 linhas;
  * <p>Antes de inserir deve-se alterar no JSON:
  * <p>Trocar "" por '';
  * <p>Apagar inicio do JSON ate o {0,0 ...}
  */
 public class MapGenerator {
+    public static int maxRow = 50;
+    public static int maxColumn = 50;
+
     public static void main(String[] args) {
-        String json = "coloque o json aqui";
+        String json = JOptionPane.showInputDialog("Insira o JSON");
 
         convertJsonToTxtFile(json);
     }
@@ -25,14 +30,11 @@ public class MapGenerator {
      * Converte os dados do JSON para uma matriz, e gera um arquivo.txt a partir dessa matriz.
      * @param json String
      */
-    public static void convertJsonToTxtFile(String json) {
+    private static void convertJsonToTxtFile(String json) {
         String jsonString = (String)json;
         String jsonFormated = (jsonString.replaceAll("'color':'white','data':null", "")).replaceAll("'type':1,", "").replaceAll("'type':0,", "");
 
         String[] items = jsonFormated.split(",");
-
-        int maxRow = 20;
-        int maxColumn = 36;
 
         String[][] matrix = new String[maxRow + 1][maxColumn + 1];
         Stack<Integer> coordinatesStack = new Stack<>();
