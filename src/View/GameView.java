@@ -13,9 +13,10 @@ import java.awt.event.KeyEvent;
 import src.Controller.Inventory;
 import src.Controller.Personagem;
 import src.Controller.World;
+import src.Controller.Generator.MapGenerator;
 
 public class GameView {
-    private static Personagem personagem = new Personagem(2, 2);
+    private static Personagem personagem = new Personagem(10, 10);
     private static World currentWorld = World.getFirstWorld();
     private static JPanel worldPanel = new JPanel();
     private static JFrame frame = new JFrame("ProjetoZ");
@@ -70,8 +71,8 @@ public class GameView {
         frame.setContentPane(worldPanel);
 
         // Tamanho da janel
-        frame.setLayout(new GridLayout(20, 36));
-        frame.setPreferredSize(new Dimension(800, 300));
+        frame.setLayout(new GridLayout(MapGenerator.maxRow, MapGenerator.maxColumn));
+        frame.setPreferredSize(new Dimension(800, 900));
 
         frame.pack();
         frame.setLocationRelativeTo(null);
@@ -99,15 +100,20 @@ public class GameView {
                     && !layoutType.equals("inventory")
                     ? "P"
                     : String.valueOf(layout[i][j]); // Posiciona o personagem
-                
+
+                //troca ponto por espaco. Temporario
+                if (caracter.equals(".")) {
+                    caracter = " ";
+                }
+
                 gameLabels[i][j] = new JLabel(caracter);// setando valor da label(cada caracter)
 
                 if (caracter.equals(".")) {
-                    gameLabels[i][j].setBorder(new EmptyBorder(0, 6, 0, 10)); // o '.' ocupa menos espaco que '#', por
+                    gameLabels[i][j].setBorder(new EmptyBorder(0, 0, 0, 0)); // o '.' ocupa menos espaco que '#', por
                                                                                 // isso e necessario aumentar a sua
                                                                                 // largura
                 } else {
-                    gameLabels[i][j].setBorder(new EmptyBorder(0, 1, 0, 10));// coordenadas do caracter
+                    gameLabels[i][j].setBorder(new EmptyBorder(0, 0, 0, 0));// coordenadas do caracter
                 }
 
                 gameLabels[i][j].setForeground(Color.WHITE); // cor da letra
