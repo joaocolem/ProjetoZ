@@ -54,11 +54,7 @@ public class GameView {
                     currentWorld = personagem.movePlayer("d", currentWorld);
                     mountDisplay(currentWorld.getMap(), "world");
                 } else if (e.getKeyCode() == KeyEvent.VK_I) {
-                    System.out.println("\n\nCollected letters: ");
-                    for (int i = 0; i < Inventory.getCollectedItems().size(); i++) {
-                        System.out.print(" " + Inventory.getCollectedItems().get(i));
-                    }
-                    // mountDisplay(Inventory.getLayout(), "inventory");
+                    mountDisplay(Inventory.getLayout(), "inventory");
                 } else if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
                     mountDisplay(currentWorld.getMap(), "world");
                 }
@@ -89,6 +85,7 @@ public class GameView {
     private static void mountDisplay(char[][] layout, String layoutType) {
         String caracter;
         JLabel[][] gameLabels = new JLabel[layout.length][layout[0].length];
+        int inventoryPosition = 0;
 
         worldPanel.removeAll();
 
@@ -101,6 +98,16 @@ public class GameView {
                     ? "P"
                     : String.valueOf(layout[i][j]); // Posiciona o personagem
 
+                if (layoutType.equals("inventory")){
+                    if (
+                        caracter.equals(String.valueOf(inventoryPosition + 1)) 
+                        && Inventory.getCollectedItems().size() > 0 
+                        && Inventory.getCollectedItems().size() > inventoryPosition
+                        ) {
+                            caracter = String.valueOf(Inventory.getCollectedItems().get(inventoryPosition));
+                            inventoryPosition ++;
+                    }
+                }
                 //troca ponto por espaco. Temporario
                 if (caracter.equals(".")) {
                     caracter = " ";
