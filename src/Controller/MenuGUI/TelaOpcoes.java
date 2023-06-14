@@ -4,7 +4,8 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.SwingUtilities;
 
-import src.Controller.GamesGUI.ForcaGUI;
+
+import src.View.GameView;
 
 
 
@@ -12,8 +13,9 @@ public class TelaOpcoes extends TelaOpcoesForm{
 
     @Override
     protected void btnNovoJogoClick(ActionEvent ev) {
-        ForcaGUI jogo = new ForcaGUI();
-        jogo.setVisible(true);
+        
+        GameView jogo = new GameView();
+        jogo.frame.setVisible(true);
         this.setVisible(false);
     }
 
