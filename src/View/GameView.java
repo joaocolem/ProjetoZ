@@ -36,7 +36,7 @@ public class GameView {
     */
     public static void displayWorld() {
         // Criando instacia JFrame
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         // JPanel
         worldPanel.setBackground(Color.BLACK); // cor de fundo do Jpanel
