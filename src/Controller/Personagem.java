@@ -1,9 +1,10 @@
 package src.Controller;
 import java.util.List;
 
-import src.Controller.Games.Forca;
-import src.Controller.Games.JogoDaMemoria;
-import src.Controller.Games.JogoDaVelha;
+import javax.swing.SwingUtilities;
+
+import src.Controller.GamesGUI.ForcaGUI;
+import src.Controller.GamesGUI.JogoDaVelha;
 
 public class Personagem {
     private int playerX;
@@ -71,22 +72,38 @@ public class Personagem {
 
          
         }
-        if (currentWorld.getMap()[newY][newX] == '?') {
-            // Chamar o jogo da forca
+
+       if (currentWorld.getMap()[newY][newX] == '?') {
+        SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+            ForcaGUI forca = new ForcaGUI();
+            // Chama o método iniciarJogo() para iniciar o jogo
+            forca.setVisible(true);
             
-            Forca.forca(Forca.nivelFacil());
+            // o forca fecha sozinho, mas ele não pode fechar o jogo principal
+            forca.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+            }
+        });
         }
-        
+    
+    
 
         if (currentWorld.getMap()[newY][newX] == '!') {
-            // Chamar o jogo da forca
-            JogoDaVelha velha = new JogoDaVelha();  
-            velha.jogar();
+        SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+            JogoDaVelha velha = new JogoDaVelha();
+            velha.setVisible(true);
+            
+            
+            velha.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+            }
+        });
         }
 
 
+
+   
         return currentWorld;
     }
 
-    
 }
