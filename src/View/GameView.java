@@ -4,28 +4,22 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-import src.Controller.Inventory;
-import src.Controller.Personagem;
-import src.Controller.World;
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+import src.Controller.Inventory;
+import src.Controller.Personagem;
+import src.Controller.World;
+import src.Controller.Generator.MapGenerator;
 
 public class GameView {
-    public static Personagem personagem = new Personagem(2, 2);
-    public static World world = new World();
-    public static World currentWorld = World.getFirstWorld();
-
-    public static JPanel worldPanel = new JPanel();
-    public static JPanel inventoryPanel = new JPanel();
-
-    public static JFrame frame = new JFrame("Swing Example");
-    public static int playerX, playerY;
+    private static Personagem personagem = new Personagem(19, 19);
+    private static World currentWorld = World.getFirstWorld();
+    private static JPanel worldPanel = new JPanel();
+    private static JFrame frame = new JFrame("ProjetoZ");
 
     public static void main(String[] args) {
         displayWorld();
@@ -36,7 +30,7 @@ public class GameView {
     */
     public static void displayWorld() {
         // Criando instacia JFrame
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // JPanel
         worldPanel.setBackground(Color.BLACK); // cor de fundo do Jpanel
@@ -60,11 +54,7 @@ public class GameView {
                     currentWorld = personagem.movePlayer("d", currentWorld);
                     mountDisplay(currentWorld.getMap(), "world");
                 } else if (e.getKeyCode() == KeyEvent.VK_I) {
-                    System.out.println("\n\nCollected letters: ");
-                    for (int i = 0; i < Inventory.getCollectedItems().size(); i++) {
-                        System.out.print(" " + Inventory.getCollectedItems().get(i));
-                    }
-                    // mountDisplay(Inventory.getLayout(), "inventory");
+                    mountDisplay(Inventory.getLayout(), "inventory");
                 } else if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
                     mountDisplay(currentWorld.getMap(), "world");
                 }
@@ -77,8 +67,8 @@ public class GameView {
         frame.setContentPane(worldPanel);
 
         // Tamanho da janel
-        frame.setLayout(new GridLayout(8, 28));
-        frame.setPreferredSize(new Dimension(800, 300));
+        frame.setLayout(new GridLayout(MapGenerator.maxRow, MapGenerator.maxColumn));
+        frame.setPreferredSize(new Dimension(800, 900));
 
         frame.pack();
         frame.setLocationRelativeTo(null);
@@ -91,10 +81,10 @@ public class GameView {
     @param layout recebe o conteudo de um arquivo.txt padrao
     @param layoutType recebe o tipo do layout desjado
     */
-    
-    public static void mountDisplay(char[][] layout, String layoutType) {
+    private static void mountDisplay(char[][] layout, String layoutType) {
         String caracter;
         JLabel[][] gameLabels = new JLabel[layout.length][layout[0].length];
+        int inventoryPosition = 0;
 
         worldPanel.removeAll();
 
@@ -106,18 +96,42 @@ public class GameView {
                     && !layoutType.equals("inventory")
                     ? "P"
                     : String.valueOf(layout[i][j]); // Posiciona o personagem
-                
+
+                if (layoutType.equals("inventory")){
+                    if (
+                        caracter.equals(String.valueOf(inventoryPosition + 1)) 
+                        && Inventory.getCollectedItems().size() > 0 
+                        && Inventory.getCollectedItems().size() > inventoryPosition
+                        ) {
+                            caracter = String.valueOf(Inventory.getCollectedItems().get(inventoryPosition));
+                            inventoryPosition ++;
+                    }
+                }
+
+                //troca ponto por espaco. Temporario
+                if (caracter.equals(".")) {
+                    caracter = " ";
+                }
+
                 gameLabels[i][j] = new JLabel(caracter);// setando valor da label(cada caracter)
 
                 if (caracter.equals(".")) {
-                    gameLabels[i][j].setBorder(new EmptyBorder(0, 6, 0, 10)); // o '.' ocupa menos espaco que '#', por
+                    gameLabels[i][j].setBorder(new EmptyBorder(0, 0, 0, 0)); // o '.' ocupa menos espaco que '#', por
                                                                                 // isso e necessario aumentar a sua
                                                                                 // largura
                 } else {
-                    gameLabels[i][j].setBorder(new EmptyBorder(0, 1, 0, 10));// coordenadas do caracter
+                    gameLabels[i][j].setBorder(new EmptyBorder(0, 0, 0, 0));// coordenadas do caracter
                 }
 
                 gameLabels[i][j].setForeground(Color.WHITE); // cor da letra
+
+                if(layoutType.equals("inventory")) {
+                    for (int k = 1; k <= 26; k++){
+                        if (caracter.equals(String.valueOf(k))) {
+                            gameLabels[i][j].setForeground(Color.BLACK);
+                        }
+                    }
+                }
 
                 worldPanel.add(gameLabels[i][j]);// adicionando label ao worldPanel
             }

@@ -3,6 +3,7 @@ package src.Controller;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -41,7 +42,8 @@ public class Inventory {
         if (currentWorld[y][x] == '?') {
             return true;
         }
-        if (currentWorld[y][x] == '!') {
+
+         if (currentWorld[y][x] == '!') {
             return true;
         }
 
