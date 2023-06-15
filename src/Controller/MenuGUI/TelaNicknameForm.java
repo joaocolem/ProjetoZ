@@ -11,13 +11,9 @@ import javax.sound.sampled.Clip;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public abstract class TelaNicknameForm extends JFrame{
-    protected JPanel pnlTela1;
-    protected JPanel pnlCampoNick;
-
     protected JLabel lblNickname;
     protected JTextField txtNickname;
     protected JLabel imagemLabel;
@@ -37,15 +33,12 @@ public abstract class TelaNicknameForm extends JFrame{
     
     private void inicializar(){
         this.setTitle("Adicionar Nickname");
-        setSize(800, 600);
-        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setSize(800, 600);
         this.setLocationRelativeTo(null);
         this.getContentPane().setLayout(new BorderLayout());
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setTitle("Adicionar nickname");
-        setResizable(true);
-        setSize(800, 600);
-        setLayout(null);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setResizable(true);
+        this.setLayout(null);
 
         imagemLabel = new JLabel();
         imagemLabel.setBounds(0, 0, getWidth(), getHeight());
@@ -79,7 +72,7 @@ public abstract class TelaNicknameForm extends JFrame{
         
     }
 
-    protected void tocarMusica() {
+    protected  void tocarMusica() {
         try {
             if (clip == null) {
                 File arquivoMusica = new File("/Users/joao/Desktop/ProjetoZ/src/Controller/MenuGUI/firulas/zelda.wav");

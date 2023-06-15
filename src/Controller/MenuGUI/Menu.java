@@ -8,5 +8,6 @@ public class Menu {
             TelaNickname tela1 = new TelaNickname();
             tela1.setVisible(true);
         });
+        
     }
 }

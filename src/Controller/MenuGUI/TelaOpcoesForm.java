@@ -1,11 +1,12 @@
 package src.Controller.MenuGUI;
 
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
+import java.awt.*;
+import javax.swing.*;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public abstract class TelaOpcoesForm extends JFrame {
@@ -14,6 +15,8 @@ public abstract class TelaOpcoesForm extends JFrame {
     protected JButton btnNovoJogo;
     protected JButton btnAlterar;
     protected JButton btnSair;
+    protected JLabel imagemLabel;
+    
 
     public TelaOpcoesForm(){
         this.inicializar();
@@ -22,13 +25,37 @@ public abstract class TelaOpcoesForm extends JFrame {
     
     public void inicializar(){
         this.setTitle("Menu Opções");
-        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setSize(800, 600);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
-        this.getContentPane().setLayout(new BorderLayout());
-        this.getContentPane().add(getOpcoes(), BorderLayout.CENTER);
-        this.pack();
+        this.setResizable(true);
+        this.setLayout(null);
+
+        imagemLabel = new JLabel();
+        imagemLabel.setBounds(0, 0, getWidth(), getHeight());
+        ImageIcon imagemFundo = new ImageIcon("/Users/joao/floresta_zelda.jpeg"); // Coloque o caminho correto da imagem aqui
+        Image imagemRedimensionada = imagemFundo.getImage().getScaledInstance(getWidth(), getHeight(), Image.SCALE_SMOOTH);
+        imagemFundo = new ImageIcon(imagemRedimensionada);
+        imagemLabel.setIcon(imagemFundo);
+        
+        btnNovoJogo = new JButton("Novo Jogo");
+        btnNovoJogo.setBounds(315, 150, 200, 75);
+        add(btnNovoJogo);
+
+        btnAlterar = new JButton("Alterar Nickame");
+        btnAlterar.setBounds(315, 250, 200, 75);
+        add(btnAlterar);
+
+        btnSair = new JButton("Sair");
+        btnSair.setBounds(315, 350, 200, 75);
+        add(btnSair);
+        
+        add(imagemLabel);
+        
 
     }
+
+    
 
     protected abstract void btnNovoJogoClick(ActionEvent ev);
     protected abstract void btnAlterarClick(ActionEvent ev);
@@ -40,17 +67,4 @@ public abstract class TelaOpcoesForm extends JFrame {
         btnSair.addActionListener(this::btnSairClick);
     }
 
-    public JPanel getOpcoes() {
-        if(Opcoes == null){
-            Opcoes = new JPanel(new GridLayout(3, 1));
-            btnNovoJogo = new JButton("Novo Jogo");
-            btnAlterar = new JButton("Alterar nickname");
-            btnSair = new JButton("Sair");
-
-            Opcoes.add(btnNovoJogo);
-            Opcoes.add(btnAlterar);
-            Opcoes.add(btnSair);
-        }
-        return Opcoes;
-    }
 }

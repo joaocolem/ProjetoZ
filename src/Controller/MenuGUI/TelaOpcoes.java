@@ -21,6 +21,7 @@ public class TelaOpcoes extends TelaOpcoesForm{
 
     @Override
     protected void btnAlterarClick(ActionEvent ev) {
+        
         SwingUtilities.invokeLater(() -> {
             TelaNickname tela1 = new TelaNickname();
             tela1.setVisible(true);

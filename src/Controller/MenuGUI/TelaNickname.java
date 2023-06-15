@@ -7,13 +7,14 @@ public class TelaNickname extends TelaNicknameForm {
 
     @Override
     protected void btnContinuarClick(ActionEvent ev) {
+        dispose();
         String nick = txtNickname.getText();
         SwingUtilities.invokeLater(() -> {
             TelaOpcoes tela2 = new TelaOpcoes();
             tela2.setVisible(true);
         });
         System.out.println(nick);
-        this.setVisible(false);
+        
     }
 
     @Override
