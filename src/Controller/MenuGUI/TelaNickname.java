@@ -15,5 +15,16 @@ public class TelaNickname extends TelaNicknameForm {
         System.out.println(nick);
         this.setVisible(false);
     }
+
+    @Override
+    protected void btnPararClick(ActionEvent ev) {
+        if(isPaused == false){
+            pausarMusica();
+        }
+        else{
+            tocarMusica();
+        }
+            
+    }
     
 }
