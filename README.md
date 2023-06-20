@@ -48,6 +48,9 @@
 > Link do diagrama de casos de uso: 
 
 ## Mapa do Jogo
+<p align="justify">
+  Para melhor entendimento do jogo, foi criado um diagrama que tem como objetivo auxiliar no entedimento dos mapas e sua implementação no jogo. Bem como eventuais expansões.
+</p>
 > Link do mapa do jogo: https://app.diagrams.net/#G187Zbbof69xN_FN1lA6_XiZGg2dCV0A2H
 
 ## Funcionalidades
