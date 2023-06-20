@@ -18,6 +18,10 @@
 
 :small_blue_diamond: [Descrição do projeto](#descrição-do-projeto)
 
+:small_blue_diamond: [Diagrama de Classe UML](#diagrama-de-classe-uml)
+
+:small_blue_diamond: [Diagrama de Casos de uso](#diagrama-de-casos-de-uso)
+
 :small_blue_diamond: [Funcionalidades](#funcionalidades)
 
 :small_blue_diamond: [Deploy da Aplicação](#deploy-da-aplicação-dash)
@@ -36,6 +40,15 @@
 
   Está sendo utilizada a metodologia SCRUM, na qual os integrantes do grupo estão se desenvolvendo aprendendo mais sobre a mesma, processos ágeis no geral e melhorando o uso do GIThub. 
 </p>
+
+## Diagrama de Classe UML
+> Link do diagrama da aplicação: https://app.diagrams.net/#G1QgTXF90ZC4XZ5YDw2THYPQspvuOMdrB5
+
+## Diagrama de Casos de Uso
+> Link do diagrama de casos de uso: 
+
+## Mapa do Jogo
+> Link do mapa do jogo: https://app.diagrams.net/#G187Zbbof69xN_FN1lA6_XiZGg2dCV0A2H
 
 ## Funcionalidades
 
