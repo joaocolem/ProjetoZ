@@ -70,10 +70,9 @@ Link do mapa do jogo: https://app.diagrams.net/#G187Zbbof69xN_FN1lA6_XiZGg2dCV0A
 ## Layout ou Deploy da Aplicação :dash:
 
 
-div align="center"
-img src="https://github.com/joaocolem/ProjetoZ/assets/105292741/63049222-cf5a-422c-8dd1-9f1205653cdf" width="0px" /
-/div
-
+<div align="center">
+<img src="https://github.com/joaocolem/ProjetoZ/assets/105292741/63049222-cf5a-422c-8dd1-9f1205653cdf" width="700px" />
+</div>
 
 
 Se ainda não houver deploy, insira capturas de tela da aplicação ou gifs
