@@ -22,6 +22,8 @@
 
 :small_blue_diamond: [Diagrama de Casos de uso](#diagrama-de-casos-de-uso)
 
+:small_blue_diamond: [Mapa do Jogo](#mapa-do-jogo)
+
 :small_blue_diamond: [Funcionalidades](#funcionalidades)
 
 :small_blue_diamond: [Deploy da Aplicação](#deploy-da-aplicação-dash)
@@ -51,7 +53,7 @@
 <p align="justify">
   Para melhor entendimento do jogo, foi criado um diagrama que tem como objetivo auxiliar no entedimento dos mapas e sua implementação no jogo. Bem como eventuais expansões.
 </p>
-> Link do mapa do jogo: https://app.diagrams.net/#G187Zbbof69xN_FN1lA6_XiZGg2dCV0A2H
+Link do mapa do jogo: https://app.diagrams.net/#G187Zbbof69xN_FN1lA6_XiZGg2dCV0A2H
 
 ## Funcionalidades
 
