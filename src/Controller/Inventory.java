@@ -58,7 +58,11 @@ public class Inventory {
         }
 
     }
-
+   /**
+     * Adiciona uma letra ao inventário.
+     *
+     * @param letter letra a ser adicionada
+     */
     private void addLetterToInventory (Character letter) {
         collectedItems.add(letter);
     }

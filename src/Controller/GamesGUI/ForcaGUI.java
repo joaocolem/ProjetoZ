@@ -18,6 +18,9 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
+/**
+ * Classe que implementa o jogo da Forca com uma interface gráfica em Java Swing.
+ */
 public class ForcaGUI extends javax.swing.JFrame {
 
     private String[] palavras = {"banana", "maca", "uva", "melancia", "abacaxi",
@@ -33,6 +36,10 @@ public class ForcaGUI extends javax.swing.JFrame {
     private JLabel tentativasLabel;
     private JButton[] botoes;
 
+        /**
+     * Construtor da classe ForcaGUI.
+     * Inicializa a janela, os componentes de interface gráfica e inicia o jogo.
+     */
     public ForcaGUI() {
         setTitle("Jogo da Forca");
         setSize(1500, 725);
@@ -78,6 +85,10 @@ public class ForcaGUI extends javax.swing.JFrame {
         iniciarJogo();
     }
 
+
+    /**
+     * Inicia o jogo, escolhendo uma palavra secreta aleatória e inicializando as variáveis.
+     */
     public void iniciarJogo() {
         Random rand = new Random();
         int index = rand.nextInt(palavras.length);
@@ -90,7 +101,9 @@ public class ForcaGUI extends javax.swing.JFrame {
 
         atualizarInterface();
     }
-
+    /**
+     * Atualiza a interface gráfica com a palavra atualizada e o número de tentativas restantes.
+     */
     private void atualizarInterface() {
         palavraLabel.setText(String.valueOf(palavraAtual));
         tentativasLabel.setText("Tentativas restantes: " + (6 - tentativas));
@@ -99,7 +112,11 @@ public class ForcaGUI extends javax.swing.JFrame {
             botao.setEnabled(true);
         }
     }
-
+    /**
+     * Método principal que inicia o jogo da forca.
+     *
+     * @param args os argumentos de linha de comando.
+     */
     private void verificarPalpite(char letra) {
         boolean acertou = false;
         for (int i = 0; i < palavraSecreta.length(); i++) {
@@ -137,7 +154,11 @@ public class ForcaGUI extends javax.swing.JFrame {
         botao.setEnabled(false);
         verificarPalpite(letra);
     }
-
+    /**
+     * Método principal que inicia o jogo da forca.
+     *
+     * @param args os argumentos de linha de comando.
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
