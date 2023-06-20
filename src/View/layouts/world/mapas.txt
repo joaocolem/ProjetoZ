@@ -3,6 +3,12 @@ Como criar os portais: (Posição X do portal) (Posição Y do portal) (Posiçã
 Ver O mapa quarto do Z como exemplo. Ele é o mapa 0 e leva para o mapa 1(corredor de quartos)
 Lembre-se que o corredor 1 tbm deve voltar para o quarto Z. Entao atentar para os demais mundos.
 
+O número após a palavra MAP é apenas para efeito de organização. Ele não é lido pelo programa.
+Ou seja, a ordem dos mapas no arquivo que define o número do mapa.
+Ver O ma-pa quarto do Z como exemplo. Ele é o mapa 0 e leva para o m-apa 1(corredor de quartos)
+Lembre-se que o corredor 1 tbm deve voltar para o quarto Z. Entao atentar para os demais mundos.
+Ao criar novos ma-pas usar o desenho pelo link e usar a classe M-apGenerator na aba controler>Generator
+Nessa classe tem as instruções
 Map 0
 ################################################## 
 #####.....................................######## 
