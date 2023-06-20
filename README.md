@@ -61,6 +61,8 @@ Link do mapa do jogo: https://app.diagrams.net/#G187Zbbof69xN_FN1lA6_XiZGg2dCV0A
 
 :heavy_check_mark: Realizar puzzles
 
+:warning: Personalizar personagem
+
 :warning: Interagir com ambiente 
 
 :warning: Interagir com outros personagens  
