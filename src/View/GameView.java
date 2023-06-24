@@ -19,8 +19,11 @@ public class GameView {
     private static Personagem personagem = new Personagem(19, 19);
     private static World currentWorld = World.getFirstWorld();
     private static JPanel worldPanel = new JPanel();
-    private static JFrame frame = new JFrame("ProjetoZ");
+    public static JFrame frame = new JFrame("ProjetoZ");
 
+    public GameView(){
+        displayWorld();
+    }
     public static void main(String[] args) {
         displayWorld();
     }
