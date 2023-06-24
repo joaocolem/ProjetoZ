@@ -48,7 +48,7 @@ public abstract class TelaNicknameForm extends JFrame {
         imagemLabel.setIcon(imagemFundo);
 
         txtNickname = new JTextField();
-        txtNickname.setBounds(300, 300, 200, 30);
+        txtNickname.setBounds(300, 300, 200, 20);
         add(txtNickname);
 
         lblNickname = new JLabel("Nickname:");
