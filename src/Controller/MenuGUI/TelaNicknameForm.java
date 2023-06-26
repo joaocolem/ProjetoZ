@@ -81,7 +81,7 @@ public abstract class TelaNicknameForm extends JFrame {
     protected void tocarMusica() {
         try {
             if (clip == null) {
-                File arquivoMusica = new File(getClass().getResource("resources/zelda.wav").toURI()); // Use the correct path of the audio file here
+                File arquivoMusica = new File(getClass().getResource("resources/music.wav").toURI()); // Use the correct path of the audio file here
                 clip = AudioSystem.getClip();
                 clip.open(AudioSystem.getAudioInputStream(arquivoMusica));
                 clip.start();
