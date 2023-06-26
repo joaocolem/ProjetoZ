@@ -70,8 +70,8 @@ public abstract class TelaNicknameForm extends JFrame {
     
         add(btnContinuar);
 
-        btnParar = new JButton("Música ▶▮");
-        btnParar.setBounds(20, 20, 120, 25);
+        btnParar = new JButton("▶▮");
+        btnParar.setBounds(0, 48, 110, 25);
         btnParar.setBackground(Color.BLACK);
         btnParar.setForeground(Color.WHITE);
         add(btnParar);
