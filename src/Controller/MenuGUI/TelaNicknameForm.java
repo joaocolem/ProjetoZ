@@ -48,25 +48,32 @@ public abstract class TelaNicknameForm extends JFrame {
         imagemLabel.setIcon(imagemFundo);
 
         txtNickname = new JTextField();
-        txtNickname.setBounds(300, 300, 200, 20);
+        txtNickname.setBounds(290, 300, 150, 30);
+        txtNickname.setBackground(Color.BLACK);
+        txtNickname.setForeground(Color.WHITE);
         add(txtNickname);
 
         lblNickname = new JLabel("Nickname:");
-        lblNickname.setBounds(300, 190, 200, 200);
+        lblNickname.setBounds(190, 190, 150, 250);
         Font fonteAtual = lblNickname.getFont();
         int tamanhoFonte = fonteAtual.getSize();
-        Font novaFonte = new Font(fonteAtual.getFontName(), fonteAtual.getStyle(), tamanhoFonte + 6);
+        Font novaFonte = new Font(fonteAtual.getFontName(), fonteAtual.getStyle(), tamanhoFonte + 8);
         lblNickname.setFont(novaFonte);
         Color novaCor = Color.WHITE;
         lblNickname.setForeground(novaCor);
         add(lblNickname);
 
         btnContinuar = new JButton("Continuar");
-        btnContinuar.setBounds(350, 330, 100, 30);
+        btnContinuar.setBounds(450, 300, 100, 30);
+        btnContinuar.setBackground(Color.BLACK);
+        btnContinuar.setForeground(Color.WHITE);
+    
         add(btnContinuar);
 
-        btnParar = new JButton("Pausar Música");
-        btnParar.setBounds(20, 20, 100, 30);
+        btnParar = new JButton("▶▮");
+        btnParar.setBounds(0, 48, 110, 25);
+        btnParar.setBackground(Color.BLACK);
+        btnParar.setForeground(Color.WHITE);
         add(btnParar);
         add(imagemLabel);
     }
@@ -74,7 +81,7 @@ public abstract class TelaNicknameForm extends JFrame {
     protected void tocarMusica() {
         try {
             if (clip == null) {
-                File arquivoMusica = new File(getClass().getResource("resources/zelda.wav").toURI()); // Use the correct path of the audio file here
+                File arquivoMusica = new File(getClass().getResource("resources/music.wav").toURI()); // Use the correct path of the audio file here
                 clip = AudioSystem.getClip();
                 clip.open(AudioSystem.getAudioInputStream(arquivoMusica));
                 clip.start();

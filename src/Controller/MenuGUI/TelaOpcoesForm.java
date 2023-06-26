@@ -39,15 +39,21 @@ public abstract class TelaOpcoesForm extends JFrame {
         imagemLabel.setIcon(imagemFundo);
 
         btnNovoJogo = new JButton("Novo Jogo");
-        btnNovoJogo.setBounds(315, 150, 200, 75);
+        btnNovoJogo.setBounds(275, 390, 200, 30);
+        btnNovoJogo.setBackground(Color.BLACK);
+        btnNovoJogo.setForeground(Color.WHITE);
         add(btnNovoJogo);
 
         btnAlterar = new JButton("Alterar Nickame");
-        btnAlterar.setBounds(315, 250, 200, 75);
+        btnAlterar.setBounds(275, 420, 200, 30);
         add(btnAlterar);
+        btnAlterar.setBackground(Color.BLACK);
+        btnAlterar.setForeground(Color.WHITE);
 
         btnSair = new JButton("Sair");
-        btnSair.setBounds(315, 350, 200, 75);
+        btnSair.setBounds(275, 450, 200, 30);
+        btnSair.setBackground(Color.BLACK);
+        btnSair.setForeground(Color.WHITE);
         add(btnSair);
 
         add(imagemLabel);
