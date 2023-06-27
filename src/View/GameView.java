@@ -97,7 +97,7 @@ public class GameView {
                 caracter = i == personagem.getPlayerY()
                     && j == personagem.getPlayerX()
                     && !layoutType.equals("inventory")
-                    ? "P"
+                    ? "Z"
                     : String.valueOf(layout[i][j]); // Posiciona o personagem
 
                 if (layoutType.equals("inventory")){

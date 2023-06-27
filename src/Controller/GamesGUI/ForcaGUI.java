@@ -95,7 +95,7 @@ public class ForcaGUI extends javax.swing.JFrame {
         palavraSecreta = palavras[index].toUpperCase();
         palavraAtual = new char[palavraSecreta.length()];
         for (int i = 0; i < palavraSecreta.length(); i++) {
-            palavraAtual[i] = '_';
+            palavraAtual[i] = '_' + '.';
         }
         tentativas = 0;
 
@@ -105,7 +105,7 @@ public class ForcaGUI extends javax.swing.JFrame {
      * Atualiza a interface gráfica com a palavra atualizada e o número de tentativas restantes.
      */
     private void atualizarInterface() {
-        palavraLabel.setText(String.valueOf(palavraAtual));
+        palavraLabel.setText(String.valueOf(palavraAtual)+" ");
         tentativasLabel.setText("Tentativas restantes: " + (6 - tentativas));
         //numCaracteres.setText("Numero de letras: " + palavraAtual.length);
         for (JButton botao : botoes) {
@@ -133,6 +133,7 @@ public class ForcaGUI extends javax.swing.JFrame {
         if (tentativas == 6 || String.valueOf(palavraAtual).equals(palavraSecreta)) {
             String mensagem;
             if (String.valueOf(palavraAtual).equals(palavraSecreta)) {
+                atualizarInterface();
                 mensagem = "Parabéns! Você acertou a palavra.";
             } else {
                 mensagem = "Você perdeu. A palavra era: " + palavraSecreta;
