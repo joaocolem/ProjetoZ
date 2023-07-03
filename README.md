@@ -53,7 +53,7 @@
 
 ## Diagrama de Casos de Uso
 ![casos de uso](https://github.com/joaocolem/ProjetoZ/assets/105292741/4c7d9d91-99d3-4b51-8472-381e5367e9f0)
-> Link do diagrama de casos de uso: 
+> Link do diagrama de casos de uso:
 
 ## Mapa do Jogo
 <p align="justify">
