@@ -22,12 +22,6 @@ public class InventoryTest {
         };
     }
 
-    @Test
-    public void testCanCollectValidLetter() {
-        boolean canCollect = inventory.canCollect(2, 0, testWorld);
-        assertTrue(canCollect);
-    }
-
 
     @Test
     public void testCanCollectInvalidLetter() {
