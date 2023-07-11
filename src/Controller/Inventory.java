@@ -63,7 +63,7 @@ public class Inventory {
      *
      * @param letter letra a ser adicionada
      */
-    private void addLetterToInventory (Character letter) {
+    public void addLetterToInventory (Character letter) {
         collectedItems.add(letter);
     }
 
