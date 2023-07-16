@@ -25,10 +25,10 @@ public class Inventory {
     */
     
     public boolean canCollect(int x, int y, char[][] currentWorld) {
-        int expectedASCIIChar = 65;
+        int expectedASCIIChar = 88;
 
         if (!collectedItems.isEmpty()) {
-            expectedASCIIChar = ((int) collectedItems.get(collectedItems.size() - 1)) + 1;
+            expectedASCIIChar = ((int) collectedItems.get(collectedItems.size() - 1)) - 1;
         }
 
         if (currentWorld[y][x] == '.') {
