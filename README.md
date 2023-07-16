@@ -55,7 +55,7 @@
 
 ## Casos de Uso
 
-<p >
+<pre>
 Caso de uso: Inserir Nickname
 Ator: Usuário
 Pré-condição: 
@@ -64,7 +64,7 @@ Fluxo normal: 	1. abrir o jogo a partir do menu principal
 Fluxos alternativos: 1. Menu secundário e selecionar alterar Nickname
 Pós-condição: Nickname atualizado
 
-</p>
+</pre>
 
 ## Diagrama de Casos de Uso
 ![casos de uso](https://github.com/joaocolem/ProjetoZ/assets/105292741/4c7d9d91-99d3-4b51-8472-381e5367e9f0)
