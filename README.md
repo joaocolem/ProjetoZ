@@ -20,6 +20,8 @@
 
 :small_blue_diamond: [Diagrama de Classe UML](#diagrama-de-classe-uml)
 
+:small_blue_diamond: [Casos de uso](#casos-de-uso)
+
 :small_blue_diamond: [Diagrama de Casos de uso](#diagrama-de-casos-de-uso)
 
 :small_blue_diamond: [Mapa do Jogo](#mapa-do-jogo)
@@ -50,6 +52,19 @@
 ## Diagrama de Classe UML
 > Link do diagrama da aplicação: https://app.diagrams.net/#G1QgTXF90ZC4XZ5YDw2THYPQspvuOMdrB5
 ![image](https://github.com/joaocolem/ProjetoZ/assets/105292741/d3444b94-a372-45fe-9f32-f6a8930249c6)
+
+## Casos de Uso
+
+<p align="justify">
+Caso de uso: Inserir Nickname
+Ator: Usuário
+Pré-condição: 
+Fluxo normal: 	1. abrir o jogo a partir do menu principal
+		2. preencher todos os campos
+Fluxos alternativos: 1. Menu secundário e selecionar alterar Nickname
+Pós-condição: Nickname atualizado
+
+</p>
 
 ## Diagrama de Casos de Uso
 ![casos de uso](https://github.com/joaocolem/ProjetoZ/assets/105292741/4c7d9d91-99d3-4b51-8472-381e5367e9f0)
