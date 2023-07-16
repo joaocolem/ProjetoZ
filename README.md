@@ -64,6 +64,35 @@ Fluxo normal: 	1. abrir o jogo a partir do menu principal
 Fluxos alternativos: 1. Menu secundário e selecionar alterar Nickname
 Pós-condição: Nickname atualizado
 
+Caso de uso: Novo jogo
+Ator: Usuário
+Pré-condição: inserir Nickname
+Fluxo normal: 	1. selecionar início de novo jogo		
+Fluxos alternativos:	
+Pós-condição: Jogo iniciado
+
+Caso de uso: Movimentar personagem
+Ator: Usuário
+Pré-condição: jogo iniciado
+Fluxo normal: 	1. mover com teclas WASD
+Fluxos alternativos:	
+Pós-condição: personagem movimentado
+
+Caso de uso: Abrir inventário
+Ator: Usuário
+Pré-condição: jogo iniciado
+Fluxo normal: 	1. Pressionar a letra “i”
+Fluxos alternativos:	
+Pós-condição: mostra o inventário
+
+Caso de uso: Mini-Jogos
+Ator: Usuário
+Pré-condição: jogo iniciado
+Fluxo normal: 	1. Movimentar personagem
+		2. Coletar caractere de mini-jogo
+Fluxos alternativos:	
+Pós-condição: Liberar passagem
+
 </pre>
 
 ## Diagrama de Casos de Uso
