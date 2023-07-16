@@ -55,7 +55,7 @@
 
 ## Casos de Uso
 
-<p align="justify">
+<p >
 Caso de uso: Inserir Nickname
 Ator: Usuário
 Pré-condição: 
