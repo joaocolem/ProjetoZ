@@ -20,17 +20,13 @@
 
 :small_blue_diamond: [Diagrama de Classe UML](#diagrama-de-classe-uml)
 
-:small_blue_diamond: [Casos de uso](#casos-de-uso)
-
-:small_blue_diamond: [Diagrama de Casos de uso](#diagrama-de-casos-de-uso)
-
 :small_blue_diamond: [Mapa do Jogo](#mapa-do-jogo)
 
 :small_blue_diamond: [Funcionalidades](#funcionalidades)
 
 :small_blue_diamond: [Deploy da Aplicação](#deploy-da-aplicação-dash)
 
-:small_blue_diamond: [Pré-requisitos](#pré-requisitos)
+:small_blue_diamond: [Requisitos](#requisitos)
 
 :small_blue_diamond: [Como rodar a aplicação](#como-rodar-a-aplicação-arrow_forward)
 
@@ -52,6 +48,55 @@
 ## Diagrama de Classe UML
 > Link do diagrama da aplicação: https://app.diagrams.net/#G1QgTXF90ZC4XZ5YDw2THYPQspvuOMdrB5
 ![image](https://github.com/joaocolem/ProjetoZ/assets/105292741/d3444b94-a372-45fe-9f32-f6a8930249c6)
+
+
+## Mapa do Jogo
+<p align="justify">
+  Para melhor entendimento do jogo, foi criado um diagrama que tem como objetivo auxiliar no entedimento dos mapas e sua implementação no jogo. Bem como eventuais expansões.
+</p>
+![mapa casa](https://github.com/joaocolem/ProjetoZ/assets/105292741/cc0fbcba-804c-4e42-92d4-ac58b17304f6)
+
+Link do mapa do jogo: https://app.diagrams.net/#G187Zbbof69xN_FN1lA6_XiZGg2dCV0A2H
+
+## Funcionalidades
+
+:heavy_check_mark: Explorar mundos  
+
+:heavy_check_mark: Realizar puzzles
+
+:warning: Personalizar personagem
+
+:warning: Interagir com ambiente 
+
+:warning: Interagir com outros personagens  
+
+## Layout ou Deploy da Aplicação :dash:
+
+
+<div align="center">
+<img src="https://github.com/joaocolem/ProjetoZ/blob/Gustavo-Branch/sshot/Captura%20de%20tela%202023-06-26%20125518.png?raw=true" width="300px" />
+<img src="https://github.com/joaocolem/ProjetoZ/assets/105292741/a861faf7-8a21-4999-b8a9-920a92106cce" width="300px" />
+</div>
+
+
+
+## Requisitos
+
+NÃO FUNCIONAIS:
+<pre>
+
+colocar nao funcionais aqui
+</pre>
+
+FUNCIONAIS:
+
+
+
+:small_blue_diamond: [Casos de uso](#casos-de-uso)
+
+:small_blue_diamond: [Diagrama de Casos de uso](#diagrama-de-casos-de-uso)
+
+
 
 ## Casos de Uso
 
@@ -99,42 +144,6 @@ Pós-condição: Liberar passagem
 ![diagrama de casosuso](https://github.com/joaocolem/ProjetoZ/assets/105292741/7a0af61f-b57c-4bb3-ac6e-50b512bc407e)
 > Link do diagrama de casos de uso:
 
-## Mapa do Jogo
-<p align="justify">
-  Para melhor entendimento do jogo, foi criado um diagrama que tem como objetivo auxiliar no entedimento dos mapas e sua implementação no jogo. Bem como eventuais expansões.
-</p>
-![mapa casa](https://github.com/joaocolem/ProjetoZ/assets/105292741/cc0fbcba-804c-4e42-92d4-ac58b17304f6)
-
-Link do mapa do jogo: https://app.diagrams.net/#G187Zbbof69xN_FN1lA6_XiZGg2dCV0A2H
-
-## Funcionalidades
-
-:heavy_check_mark: Explorar mundos  
-
-:heavy_check_mark: Realizar puzzles
-
-:warning: Personalizar personagem
-
-:warning: Interagir com ambiente 
-
-:warning: Interagir com outros personagens  
-
-## Layout ou Deploy da Aplicação :dash:
-
-
-<div align="center">
-<img src="https://github.com/joaocolem/ProjetoZ/blob/Gustavo-Branch/sshot/Captura%20de%20tela%202023-06-26%20125518.png?raw=true" width="300px" />
-<img src="https://github.com/joaocolem/ProjetoZ/assets/105292741/a861faf7-8a21-4999-b8a9-920a92106cce" width="300px" />
-</div>
-
-
-
-## Pré-requisitos
-
-:warning: [Node](https://nodejs.org/en/download/)
-
-
-Liste todas as dependencias e libs que o usuário deve ter instalado na máquina antes de rodar a aplicação 
 
 ## Como rodar a aplicação :arrow_forward:
 
