@@ -96,13 +96,15 @@ Pós-condição: Liberar passagem
 </pre>
 
 ## Diagrama de Casos de Uso
-![casos de uso](https://github.com/joaocolem/ProjetoZ/assets/105292741/4c7d9d91-99d3-4b51-8472-381e5367e9f0)
+![diagrama de casosuso](https://github.com/joaocolem/ProjetoZ/assets/105292741/7a0af61f-b57c-4bb3-ac6e-50b512bc407e)
 > Link do diagrama de casos de uso:
 
 ## Mapa do Jogo
 <p align="justify">
   Para melhor entendimento do jogo, foi criado um diagrama que tem como objetivo auxiliar no entedimento dos mapas e sua implementação no jogo. Bem como eventuais expansões.
 </p>
+![mapa casa](https://github.com/joaocolem/ProjetoZ/assets/105292741/cc0fbcba-804c-4e42-92d4-ac58b17304f6)
+
 Link do mapa do jogo: https://app.diagrams.net/#G187Zbbof69xN_FN1lA6_XiZGg2dCV0A2H
 
 ## Funcionalidades
