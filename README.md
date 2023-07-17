@@ -149,7 +149,7 @@ Pós-condição: Liberar passagem
 ## Diagrama de Sequência
 
 > Iniciar Novo Jogo:
-![diagrama sequencia mover personagem](https://github.com/joaocolem/ProjetoZ/assets/105292741/52ed1d2c-e015-4a77-9b65-9075893eb72f)
+![diagrama sequencia novo jogo](https://github.com/joaocolem/ProjetoZ/assets/105292741/37395689-0212-4df8-924c-2f7c9b79ce28)
 
 > Mover Personagem:
 ![diagrama sequencia mover personagem](https://github.com/joaocolem/ProjetoZ/assets/105292741/52ed1d2c-e015-4a77-9b65-9075893eb72f)
