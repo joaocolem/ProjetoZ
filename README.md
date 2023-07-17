@@ -96,6 +96,8 @@ FUNCIONAIS:
 
 :small_blue_diamond: [Diagrama de Casos de uso](#diagrama-de-casos-de-uso)
 
+:small_blue_diamond: [Diagrama de Sequênciaa](#diagrama-de-sequência)
+
 
 
 ## Casos de Uso
@@ -141,8 +143,16 @@ Pós-condição: Liberar passagem
 </pre>
 
 ## Diagrama de Casos de Uso
-![diagrama de casosuso](https://github.com/joaocolem/ProjetoZ/assets/105292741/7a0af61f-b57c-4bb3-ac6e-50b512bc407e)
-> Link do diagrama de casos de uso:
+![casos de uso 2](https://github.com/joaocolem/ProjetoZ/assets/105292741/98729826-ebf9-4d5d-bb9f-94c41911eefc)
+
+
+## Diagrama de Sequência
+
+> Iniciar Novo Jogo:
+![diagrama sequencia mover personagem](https://github.com/joaocolem/ProjetoZ/assets/105292741/52ed1d2c-e015-4a77-9b65-9075893eb72f)
+
+> Mover Personagem:
+![diagrama sequencia mover personagem](https://github.com/joaocolem/ProjetoZ/assets/105292741/52ed1d2c-e015-4a77-9b65-9075893eb72f)
 
 
 ## Como rodar a aplicação :arrow_forward:
