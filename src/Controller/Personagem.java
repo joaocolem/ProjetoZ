@@ -90,9 +90,13 @@ public class Personagem {
             // Chama o método iniciarJogo() para iniciar o jogo
             forca.setVisible(true);
             
-            Forca.forca(Forca.nivelFacil());
+            // o forca fecha sozinho, mas ele não pode fechar o jogo principal
+            forca.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+            }
+        });
         }
-        
+    
+    
 
         if (currentWorld.getMap()[newY][newX] == '!') {
         SwingUtilities.invokeLater(new Runnable() {
@@ -107,8 +111,9 @@ public class Personagem {
         }
 
 
+
+   
         return currentWorld;
     }
 
-    
 }

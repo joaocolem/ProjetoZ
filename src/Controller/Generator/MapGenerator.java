@@ -51,8 +51,14 @@ public class MapGenerator {
             if (coordinatesStack.size() == 2){
                 if (item.contains("'character'")) {
                     String[] parts = item.split(":");
+                    String character;
 
-                    String character = parts[2];
+                    if (parts.length > 2) {
+                        character = parts[2];
+                    } else {
+                        character = parts[1];
+                    }
+
                     int row = coordinatesStack.pop();
                     int column = coordinatesStack.pop();
 

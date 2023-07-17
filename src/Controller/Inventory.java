@@ -3,7 +3,7 @@ package src.Controller;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Array;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -25,10 +25,10 @@ public class Inventory {
     */
     
     public boolean canCollect(int x, int y, char[][] currentWorld) {
-        int expectedASCIIChar = 65;
+        int expectedASCIIChar = 88;
 
         if (!collectedItems.isEmpty()) {
-            expectedASCIIChar = ((int) collectedItems.get(collectedItems.size() - 1)) + 1;
+            expectedASCIIChar = ((int) collectedItems.get(collectedItems.size() - 1)) - 1;
         }
 
         if (currentWorld[y][x] == '.') {
@@ -43,6 +43,10 @@ public class Inventory {
             return true;
         }
 
+         if (currentWorld[y][x] == '!') {
+            return true;
+        }
+
         else if ((int) currentWorld[y][x] == expectedASCIIChar)
         {
             addLetterToInventory(currentWorld[y][x]);
@@ -54,8 +58,12 @@ public class Inventory {
         }
 
     }
-
-    private void addLetterToInventory (Character letter) {
+   /**
+     * Adiciona uma letra ao inventário.
+     *
+     * @param letter letra a ser adicionada
+     */
+    public void addLetterToInventory (Character letter) {
         collectedItems.add(letter);
     }
 

@@ -17,11 +17,14 @@ import src.Controller.Generator.MapGenerator;
 import src.Controller.Helpers.Helper;
 
 public class GameView {
-    private static Personagem personagem = new Personagem(10, 10);
+    private static Personagem personagem = new Personagem(19, 19);
     private static World currentWorld = World.getFirstWorld();
     private static JPanel worldPanel = new JPanel();
-    private static JFrame frame = new JFrame("ProjetoZ");
+    public static JFrame frame = new JFrame("ProjetoZ");
 
+    public GameView(){
+        displayWorld();
+    }
     public static void main(String[] args) {
         displayWorld();
     }
@@ -82,7 +85,6 @@ public class GameView {
     @param layout recebe o conteudo de um arquivo.txt padrao
     @param layoutType recebe o tipo do layout desjado
     */
-    
     private static void mountDisplay(char[][] layout, String layoutType) {
         String caracter;
         JLabel[][] gameLabels = new JLabel[layout.length][layout[0].length];
@@ -96,7 +98,7 @@ public class GameView {
                 caracter = i == personagem.getPlayerY()
                     && j == personagem.getPlayerX()
                     && !layoutType.equals("inventory")
-                    ? "P"
+                    ? "Z"
                     : String.valueOf(layout[i][j]); // Posiciona o personagem
 
                 if (layoutType.equals("inventory")){
@@ -109,6 +111,7 @@ public class GameView {
                             inventoryPosition ++;
                     }
                 }
+
                 //troca ponto por espaco. Temporario
                 if (caracter.equals(".")) {
                     caracter = " ";
@@ -125,6 +128,14 @@ public class GameView {
                 }
 
                 gameLabels[i][j].setForeground(Color.WHITE); // cor da letra
+
+                if(layoutType.equals("inventory")) {
+                    for (int k = 1; k <= 26; k++){
+                        if (caracter.equals(String.valueOf(k))) {
+                            gameLabels[i][j].setForeground(Color.BLACK);
+                        }
+                    }
+                }
 
                 worldPanel.add(gameLabels[i][j]);// adicionando label ao worldPanel
             }

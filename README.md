@@ -18,6 +18,12 @@
 
 :small_blue_diamond: [Descrição do projeto](#descrição-do-projeto)
 
+:small_blue_diamond: [Diagrama de Classe UML](#diagrama-de-classe-uml)
+
+:small_blue_diamond: [Diagrama de Casos de uso](#diagrama-de-casos-de-uso)
+
+:small_blue_diamond: [Mapa do Jogo](#mapa-do-jogo)
+
 :small_blue_diamond: [Funcionalidades](#funcionalidades)
 
 :small_blue_diamond: [Deploy da Aplicação](#deploy-da-aplicação-dash)
@@ -25,6 +31,10 @@
 :small_blue_diamond: [Pré-requisitos](#pré-requisitos)
 
 :small_blue_diamond: [Como rodar a aplicação](#como-rodar-a-aplicação-arrow_forward)
+
+:small_blue_diamond: [Documentação do Código (Javadoc)](#documentação-do-código-(javadoc))
+
+:small_blue_diamond: [Desenvolvedores](#desenvolvedores)
 
 
 
@@ -37,11 +47,27 @@
   Está sendo utilizada a metodologia SCRUM, na qual os integrantes do grupo estão se desenvolvendo aprendendo mais sobre a mesma, processos ágeis no geral e melhorando o uso do GIThub. 
 </p>
 
+## Diagrama de Classe UML
+> Link do diagrama da aplicação: https://app.diagrams.net/#G1QgTXF90ZC4XZ5YDw2THYPQspvuOMdrB5
+![image](https://github.com/joaocolem/ProjetoZ/assets/105292741/d3444b94-a372-45fe-9f32-f6a8930249c6)
+
+## Diagrama de Casos de Uso
+![casos de uso](https://github.com/joaocolem/ProjetoZ/assets/105292741/4c7d9d91-99d3-4b51-8472-381e5367e9f0)
+> Link do diagrama de casos de uso:
+
+## Mapa do Jogo
+<p align="justify">
+  Para melhor entendimento do jogo, foi criado um diagrama que tem como objetivo auxiliar no entedimento dos mapas e sua implementação no jogo. Bem como eventuais expansões.
+</p>
+Link do mapa do jogo: https://app.diagrams.net/#G187Zbbof69xN_FN1lA6_XiZGg2dCV0A2H
+
 ## Funcionalidades
 
 :heavy_check_mark: Explorar mundos  
 
 :heavy_check_mark: Realizar puzzles
+
+:warning: Personalizar personagem
 
 :warning: Interagir com ambiente 
 
@@ -49,17 +75,18 @@
 
 ## Layout ou Deploy da Aplicação :dash:
 
-> Link do deploy da aplicação. Exemplo com netlify: https://certificates-for-everyone-womakerscode.netlify.app/
 
-... 
+<div align="center">
+<img src="https://github.com/joaocolem/ProjetoZ/blob/Gustavo-Branch/sshot/Captura%20de%20tela%202023-06-26%20125518.png?raw=true" width="300px" />
+<img src="https://github.com/joaocolem/ProjetoZ/assets/105292741/a861faf7-8a21-4999-b8a9-920a92106cce" width="300px" />
+</div>
 
-Se ainda não houver deploy, insira capturas de tela da aplicação ou gifs
+
 
 ## Pré-requisitos
 
 :warning: [Node](https://nodejs.org/en/download/)
 
-...
 
 Liste todas as dependencias e libs que o usuário deve ter instalado na máquina antes de rodar a aplicação 
 
@@ -67,52 +94,13 @@ Liste todas as dependencias e libs que o usuário deve ter instalado na máquina
 
 No terminal, clone o projeto: 
 
-```
-git clone https://github.com/React-Bootcamp-WoMarkersCode/certificate-generator
-```
+git clone https://github.com/joaocolem/ProjetoZ.git
 
-... 
 
 Coloque um passo a passo para rodar a sua aplicação. **Dica: clone o próprio projeto e verfique se o passo a passo funciona**
 
-## Como rodar os testes
-
-Coloque um passo a passo para executar os testes
-
-```
-$ npm test, rspec, etc 
-```
-
-## Casos de Uso
-
-Explique com mais detalhes como a sua aplicação poderia ser utilizada. O uso de **gifs** aqui seria bem interessante. 
-
-Exemplo: Caso a sua aplicação tenha alguma funcionalidade de login apresente neste tópico os dados necessários para acessá-la.
-
-## JSON :floppy_disk:
-
-### Usuários: 
-
-|name|email|password|token|avatar|
-| -------- |-------- |-------- |-------- |-------- |
-|Lais Lima|laislima98@hotmail.com|lais123|true|https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9-U_HbQAipum9lWln3APcBIwng7T46hdBA42EJv8Hf6Z4fDT3&usqp=CAU|
-
-... 
-
-Se quiser, coloque uma amostra do banco de dados 
-
-## Iniciando/Configurando banco de dados
-
-Se for necessário configurar algo antes de iniciar o banco de dados insira os comandos a serem executados 
-
-## Linguagens, dependencias e libs utilizadas :books:
-
-- [Java](https://pt-br.reactjs.org/docs/create-a-new-react-app.html)
-- [React PDF](https://react-pdf.org/)
-
-...
-
-Liste as tecnologias utilizadas no projeto que **não** forem reconhecidas pelo Github 
+## Documentação do Código (Javadoc)
+> Link do Javadoc: 
 
 ## Resolvendo Problemas :exclamation:
 
@@ -120,13 +108,12 @@ Em [issues]() foram abertos alguns problemas gerados durante o desenvolvimento d
 
 ## Tarefas em aberto
 
-Se for o caso, liste tarefas/funcionalidades que ainda precisam ser implementadas na sua aplicação
 
-:memo: Tarefa 1 
+:memo: Implementar Cores
 
-:memo: Tarefa 2 
+:memo: Música durante o jogo
 
-:memo: Tarefa 3 
+:memo: NPCs em movimento
 
 ## Desenvolvedores:octocat:
 
@@ -134,7 +121,7 @@ Se for o caso, liste tarefas/funcionalidades que ainda precisam ser implementada
 | :---: | :---: | :---: 
 [<img src="https://avatars.githubusercontent.com/u/134110807?v=4" width=115><br><sub>Danilo</sub>](https://github.com/danilohenriki) |  [<img src="https://avatars.githubusercontent.com/u/102836495?v=4" width=115><br><sub>Lucas da Costa</sub>](https://github.com/DreaMagici4n) |  [<img src="https://avatars.githubusercontent.com/u/134005292?v=4" width=115><br><sub>Filipe Borges</sub>](https://github.com/FilipeBrges)|| 
 | :---: | :---: | :---: 
-| [<img src="https://avatars.githubusercontent.com/u/93010166?v=4" width=115><br><sub>Vitor Franco</sub>](https://github.com/vfranco00)
+| [<img src="https://avatars.githubusercontent.com/u/85462812?v=4" width=115><br><sub>Hudwesley Morais</sub>](https://github.com/hudwesley) | [<img src="https://avatars.githubusercontent.com/u/93010166?v=4" width=115><br><sub>Vitor Franco</sub>](https://github.com/vfranco00)
 
 
 ## Licença 
