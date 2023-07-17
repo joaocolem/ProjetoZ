@@ -140,8 +140,3 @@ public class GameView {
                 worldPanel.add(gameLabels[i][j]);// adicionando label ao worldPanel
             }
         }
-
-        worldPanel.revalidate();
-        worldPanel.repaint();
-    }
-}
