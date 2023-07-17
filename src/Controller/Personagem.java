@@ -1,9 +1,11 @@
 package src.Controller;
 import java.util.List;
 
-import src.Controller.Games.Forca;
-import src.Controller.Games.JogoDaMemoria;
-import src.Controller.Games.JogoDaVelha;
+import javax.swing.SwingUtilities;
+
+import src.Controller.GamesGUI.ForcaGUI;
+import src.Controller.GamesGUI.JogoDaVelha;
+import src.Controller.Helpers.Helper;
 
 public class Personagem {
     private int playerX;
@@ -34,6 +36,13 @@ public class Personagem {
     public World movePlayer(String input, World currentWorld) {
         int newX = playerX;
         int newY = playerY;
+        char[][] map = currentWorld.getMap();
+
+        if(map[newY][newX] == 'A') {
+            char[][] layout = Helper.getLayout("..\\\\View\\\\layouts\\\\world\\\\end.txt");
+            World end = new World(layout);
+            return end;
+        }
 
         if (input.equals("w")) {
             newY = playerY - 1;
@@ -47,8 +56,10 @@ public class Personagem {
 
 
 
-        if (currentWorld.isValidMove(newX, newY) && inventory.canCollect(newX, newY, currentWorld.getMap())) {
+        if (currentWorld.isValidMove(newX, newY)) {
             currentWorld.updateWorld(playerX, playerY, '.');
+
+          
 
             List<Portal> portals = currentWorld.getPortals();
             for (Portal portal : portals) {
@@ -71,17 +82,28 @@ public class Personagem {
 
          
         }
-        if (currentWorld.getMap()[newY][newX] == '?') {
-            // Chamar o jogo da forca
+
+       if (currentWorld.getMap()[newY][newX] == '?') {
+        SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+            ForcaGUI forca = new ForcaGUI();
+            // Chama o método iniciarJogo() para iniciar o jogo
+            forca.setVisible(true);
             
             Forca.forca(Forca.nivelFacil());
         }
         
 
         if (currentWorld.getMap()[newY][newX] == '!') {
-            // Chamar o jogo da forca
-            JogoDaVelha velha = new JogoDaVelha();  
-            velha.jogar();
+        SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+            JogoDaVelha velha = new JogoDaVelha();
+            velha.setVisible(true);
+            
+            
+            velha.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+            }
+        });
         }
 
 
