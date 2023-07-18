@@ -118,6 +118,20 @@ Modo de Jogo:
 
 </pre>
 
+##RESTRIÇÕES E LIMITAÇÕES
+
+<pre>
+Desempenho:
+	O jogo "Labirinto Z" precisa ser otimizado para garantir um desempenho adequado em diferentes plataformas e dispositivos.
+Suporte a Plataformas:
+	O jogo foi desenvolvido para ser executado apenas em desktop, sendo necessário o uso de uma IDE.
+	O jogo deve ser desenvolvido levando em consideração as limitações e restrições das plataformas utilizadas.
+Idioma:
+	O jogo está disponível apenas em português-BR.
+Formato e Layout do Jogo:
+	O formato do jogo utiliza caracteres especiais e letras para representar os desafios, as demarcações dos mundos e os objetivos propostos. Não é possível melhorar esse aspecto.
+
+</pre>
 
 :small_blue_diamond: [Casos de uso](#casos-de-uso)
 
