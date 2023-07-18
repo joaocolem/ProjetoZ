@@ -3,9 +3,9 @@ import java.util.List;
 
 import javax.swing.SwingUtilities;
 
-import src.Controller.GamesGUI.ForcaGUI;
-import src.Controller.GamesGUI.JogoDaVelha;
-import src.Controller.Helpers.Helper;
+import src.Helpers.Helper;
+import src.View.GamesGUI.ForcaGUI;
+import src.View.GamesGUI.JogoDaVelha;
 
 public class Personagem {
     private int playerX;

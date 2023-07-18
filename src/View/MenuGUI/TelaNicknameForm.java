@@ -1,4 +1,4 @@
-package src.Controller.MenuGUI;
+package src.View.MenuGUI;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;

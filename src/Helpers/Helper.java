@@ -1,4 +1,4 @@
-package src.Controller.Helpers;
+package src.Helpers;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

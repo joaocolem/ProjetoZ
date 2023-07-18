@@ -1,5 +1,5 @@
 
-package src.Controller.GamesGUI;
+package src.View.GamesGUI;
 
 import java.awt.Component;
 import java.awt.Font;

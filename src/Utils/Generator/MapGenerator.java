@@ -1,4 +1,4 @@
-package src.Controller.Generator;
+package src.Utils.Generator;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

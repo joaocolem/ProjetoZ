@@ -1,4 +1,4 @@
-package src.Controller.MenuGUI;
+package src.View.MenuGUI;
 
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;

@@ -13,8 +13,8 @@ import java.awt.event.KeyEvent;
 import src.Controller.Inventory;
 import src.Controller.Personagem;
 import src.Controller.World;
-import src.Controller.Generator.MapGenerator;
-import src.Controller.Helpers.Helper;
+import src.Helpers.Helper;
+import src.Utils.Generator.MapGenerator;
 
 public class GameView {
     private static Personagem personagem = new Personagem(19, 19);

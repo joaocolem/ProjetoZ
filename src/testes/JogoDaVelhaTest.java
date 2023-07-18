@@ -1,7 +1,7 @@
 package src.testes;
 
 import src.Controller.*;
-import src.Controller.GamesGUI.*;
+import src.View.GamesGUI.*;
 
 import org.junit.jupiter.api.Test;
 

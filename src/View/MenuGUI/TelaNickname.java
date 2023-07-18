@@ -1,4 +1,4 @@
-package src.Controller.MenuGUI;
+package src.View.MenuGUI;
 
 import java.awt.event.ActionEvent;
 import javax.swing.SwingUtilities;

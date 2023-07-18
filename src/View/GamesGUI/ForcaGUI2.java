@@ -1,11 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-package src.Controller.GamesGUI;
+package src.View.GamesGUI;
 
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
@@ -17,11 +14,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
+import javax.swing.border.Border;
 
-/**
- * Classe que implementa o jogo da Forca com uma interface gráfica em Java Swing.
- */
-public class ForcaGUI extends javax.swing.JFrame {
+public class ForcaGUI2 extends javax.swing.JFrame {
 
     private String[] palavras = {"banana", "maca", "uva", "melancia", "abacaxi",
             "laranja", "morango", "kiwi", "mamao", "pessego",
@@ -30,17 +25,23 @@ public class ForcaGUI extends javax.swing.JFrame {
     private String palavraSecreta;
     private char[] palavraAtual;
     private int tentativas;
-    
+    Border borda;
+
+    public ForcaGUI2(String palavraSecreta, char[] palavraAtual, int tentativas, Border borda, JLabel palavraLabel, JLabel tentativasLabel, JLabel numCaracteres, JButton[] botoes) throws HeadlessException {
+        this.palavraSecreta = palavraSecreta;
+        this.palavraAtual = palavraAtual;
+        this.tentativas = tentativas;
+        this.borda = borda;
+        this.palavraLabel = palavraLabel;
+        this.tentativasLabel = tentativasLabel;
+        this.botoes = botoes;
+    }
     
     private JLabel palavraLabel;
     private JLabel tentativasLabel;
     private JButton[] botoes;
 
-        /**
-     * Construtor da classe ForcaGUI.
-     * Inicializa a janela, os componentes de interface gráfica e inicia o jogo.
-     */
-    public ForcaGUI() {
+    public ForcaGUI2() {
         setTitle("Jogo da Forca");
         setSize(1500, 725);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -62,7 +63,6 @@ public class ForcaGUI extends javax.swing.JFrame {
         
 
         JPanel botoesPanel = new JPanel(new GridLayout(2, 13));
-        botoesPanel.setBorder(BorderFactory.createEmptyBorder(5, 0, 0, 0));
         botoes = new JButton[26];
         for (int i = 0; i < 26; i++) {
             botoes[i] = new JButton(String.valueOf((char) ('A' + i)));
@@ -85,38 +85,28 @@ public class ForcaGUI extends javax.swing.JFrame {
         iniciarJogo();
     }
 
-
-    /**
-     * Inicia o jogo, escolhendo uma palavra secreta aleatória e inicializando as variáveis.
-     */
-    public void iniciarJogo() {
+    private void iniciarJogo() {
         Random rand = new Random();
         int index = rand.nextInt(palavras.length);
         palavraSecreta = palavras[index].toUpperCase();
         palavraAtual = new char[palavraSecreta.length()];
         for (int i = 0; i < palavraSecreta.length(); i++) {
-            palavraAtual[i] = '_' + '.';
+            palavraAtual[i] = '_';
         }
         tentativas = 0;
 
         atualizarInterface();
     }
-    /**
-     * Atualiza a interface gráfica com a palavra atualizada e o número de tentativas restantes.
-     */
+
     private void atualizarInterface() {
-        palavraLabel.setText(String.valueOf(palavraAtual)+" ");
+        palavraLabel.setText(String.valueOf(palavraAtual));
         tentativasLabel.setText("Tentativas restantes: " + (6 - tentativas));
         //numCaracteres.setText("Numero de letras: " + palavraAtual.length);
         for (JButton botao : botoes) {
             botao.setEnabled(true);
         }
     }
-    /**
-     * Método principal que inicia o jogo da forca.
-     *
-     * @param args os argumentos de linha de comando.
-     */
+
     private void verificarPalpite(char letra) {
         boolean acertou = false;
         for (int i = 0; i < palavraSecreta.length(); i++) {
@@ -133,7 +123,6 @@ public class ForcaGUI extends javax.swing.JFrame {
         if (tentativas == 6 || String.valueOf(palavraAtual).equals(palavraSecreta)) {
             String mensagem;
             if (String.valueOf(palavraAtual).equals(palavraSecreta)) {
-                atualizarInterface();
                 mensagem = "Parabéns! Você acertou a palavra.";
             } else {
                 mensagem = "Você perdeu. A palavra era: " + palavraSecreta;
@@ -142,7 +131,7 @@ public class ForcaGUI extends javax.swing.JFrame {
             //f (option == JOptionPane.YES_OPTION) {
               //  iniciarJogo();
             //} else {
-                dispose();
+                System.exit(0);
             //}
         } else {
             atualizarInterface();
@@ -155,20 +144,12 @@ public class ForcaGUI extends javax.swing.JFrame {
         botao.setEnabled(false);
         verificarPalpite(letra);
     }
-    /**
-     * Método principal que inicia o jogo da forca.
-     *
-     * @param args os argumentos de linha de comando.
-     */
+
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                new ForcaGUI().setVisible(true);
+                new ForcaGUI2().setVisible(true);
             }
         });
     }
-
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    // End of variables declaration//GEN-END:variables
 }
