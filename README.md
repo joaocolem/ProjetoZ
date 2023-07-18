@@ -84,12 +84,39 @@ Link do mapa do jogo: https://app.diagrams.net/#G187Zbbof69xN_FN1lA6_XiZGg2dCV0A
 
 NÃO FUNCIONAIS:
 <pre>
-
-colocar nao funcionais aqui
+Desempenho:
+	O jogo deve ter gráficos simples e responsivos, sem atrasos ou travamentos durante a jogabilidade.
+	O tempo de resposta do jogo para ações do jogador deve ser rápido, com feedback imediato.
+Gráficos e Áudio:
+	Os gráficos devem ser adequados ao estilo 2D do jogo.
+	O jogo deve ter áudio apenas na parte de acesso ao jogo.
+	Os recursos gráficos e de áudio devem ser ajustados às capacidades da plataforma utilizada.
+Usabilidade:
+	Os controles devem ser intuitivos e responsivos, proporcionando uma experiência de jogo fácil de aprender.
+	A interface do usuário deve ser clara, amigável e fornecer informações relevantes ao jogador.
+Confiabilidade:
+	O jogo deve ser estável e confiável, evitando crashes e comportamentos inesperados.
+Manutenibilidade:
+	O jogo deve ser facilmente atualizável e corrigível, permitindo a incorporação de novas funcionalidades e correções de bugs.
 </pre>
 
 FUNCIONAIS:
+<pre>
+Movimentação:
+	O jogador deve poder mover o personagem livremente pelo labirinto usando os controles direcionais A, W, S, D.
+Coleta de Letras:
+	O jogador deve procurar e coletar letras estrategicamente posicionadas no labirinto para concluir o jogo.
+	As letras devem ser capturadas em ordem decrescente (do Y ao A).
+Obstáculos:
+	O jogo deve incluir diferentes tipos de obstáculos, como paredes indestrutíveis e passagens para novos mundos, posicionados de forma distintas.
+Inventário:
+	O jogador deve ser capaz de acessar o inventário pressionando a tecla "I" no teclado do desktop. O inventário deve exibir as letras já coletadas.
+Modo de Jogo:
+	O jogo deve oferecer apenas um modo de jogo, o modo para um jogador.
+	O modo de jogo deve apresentar uma sequência de mini jogos com níveis de dificuldade variados.
+	O jogo deve ser elaborado utilizando caracteres especiais e letras para construção de barreiras e construção dos mundos, e os objetivos a serem coletados devem ser representados pelas letras do alfabeto e o acesso aos mini games se dará através do caractere especial “?”.
 
+</pre>
 
 
 :small_blue_diamond: [Casos de uso](#casos-de-uso)
