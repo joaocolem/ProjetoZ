@@ -7,13 +7,15 @@ import org.junit.jupiter.api.Test;
 
 public class PersonagemTest {
 
-    private Personagem personagem;
-    private World world;
+    private Personagem personagem, personagem2;
+    private World world, world2;
     private char[][] tempMap;
 
     @BeforeEach
     public void setup() {
         personagem = new Personagem(0, 0);
+        personagem2 = new Personagem(1, 1);
+
         tempMap = new char[][]{
                 {'.', '.', '.'},
                 {'.', '.', '.'},
@@ -21,6 +23,13 @@ public class PersonagemTest {
         };
         world = new World(tempMap);
         
+        tempMap = new char[][]{
+                {'.', '.', '.'},
+                {'.', 'A', '.'},
+                {'.', '.', '.'}
+            };
+
+        world2 = new World(tempMap);
     }
 
     @Test
@@ -59,6 +68,13 @@ public class PersonagemTest {
         Assertions.assertEquals(0, personagem.getPlayerX());
         Assertions.assertEquals(0, personagem.getPlayerY());
         Assertions.assertEquals(world, newWorld);
+    }
+
+    @Test
+    public void testMovePlayerEndGame() {
+        World endWorld = personagem2.movePlayer("d", world2);
+        char[][] endLayout = endWorld.getMap();
+        Assertions.assertEquals('A', endLayout[personagem2.getPlayerX()][personagem2.getPlayerY()]);
     }
 
     
