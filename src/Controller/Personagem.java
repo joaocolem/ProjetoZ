@@ -5,6 +5,7 @@ import javax.swing.SwingUtilities;
 
 import src.Controller.GamesGUI.ForcaGUI;
 import src.Controller.GamesGUI.JogoDaVelha;
+import src.Controller.Helpers.Helper;
 
 public class Personagem {
     private int playerX;
@@ -35,6 +36,18 @@ public class Personagem {
     public World movePlayer(String input, World currentWorld) {
         int newX = playerX;
         int newY = playerY;
+        char[][] map = currentWorld.getMap();
+
+        //verifica se pegou a ultima letra, se sim sobe a tela final
+        //Inicio fim
+        if(map[newY][newX] == 'A') {
+            char[][] layout = Helper.getLayout("src/View/layouts/world/end.txt");
+            playerX = 0;
+            playerY = 0;
+            World end = new World(layout);
+            return end;
+        }
+        //Final fim
 
         if (input.equals("w")) {
             newY = playerY - 1;
@@ -45,8 +58,6 @@ public class Personagem {
         } else if (input.equals("d")) {
             newX = playerX + 1;
         }
-
-
 
         if (currentWorld.isValidMove(newX, newY) && inventory.canCollect(newX, newY, currentWorld.getMap())) {
             currentWorld.updateWorld(playerX, playerY, '.');
@@ -69,8 +80,6 @@ public class Personagem {
 
             playerX = newX;
             playerY = newY;
-
-         
         }
 
        if (currentWorld.getMap()[newY][newX] == '?') {
@@ -86,8 +95,6 @@ public class Personagem {
         });
         }
     
-    
-
         if (currentWorld.getMap()[newY][newX] == '!') {
         SwingUtilities.invokeLater(new Runnable() {
         public void run() {
@@ -100,9 +107,6 @@ public class Personagem {
         });
         }
 
-
-
-   
         return currentWorld;
     }
 

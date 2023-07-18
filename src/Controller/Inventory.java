@@ -71,26 +71,6 @@ public class Inventory {
         return collectedItems;
     }
 
-    public static char[][] getLayout () {
-        try (BufferedReader reader = new BufferedReader(new FileReader("src/View/layouts/inventory/inventory.txt"))) {
-            String line;
-            List<char[]> chars = new ArrayList<>();
-
-            while ((line = reader.readLine()) != null) {
-                    chars.add(line.toCharArray());
-            }
-            char[][] layout = new char[chars.size()][];
-            chars.toArray(layout);
-
-            return layout;
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return null;
-    }
-
     public static void setInInventory(String letter) {
         inInventory += letter;
     }

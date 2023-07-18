@@ -14,6 +14,7 @@ import src.Controller.Inventory;
 import src.Controller.Personagem;
 import src.Controller.World;
 import src.Controller.Generator.MapGenerator;
+import src.Controller.Helpers.Helper;
 
 public class GameView {
     private static Personagem personagem = new Personagem(19, 19);
@@ -57,7 +58,7 @@ public class GameView {
                     currentWorld = personagem.movePlayer("d", currentWorld);
                     mountDisplay(currentWorld.getMap(), "world");
                 } else if (e.getKeyCode() == KeyEvent.VK_I) {
-                    mountDisplay(Inventory.getLayout(), "inventory");
+                    mountDisplay(Helper.getLayout("src/View/layouts/inventory/inventory.txt"), "inventory");
                 } else if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
                     mountDisplay(currentWorld.getMap(), "world");
                 }
@@ -139,7 +140,6 @@ public class GameView {
                 worldPanel.add(gameLabels[i][j]);// adicionando label ao worldPanel
             }
         }
-
         worldPanel.revalidate();
         worldPanel.repaint();
     }
