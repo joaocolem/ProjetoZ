@@ -118,7 +118,7 @@ Modo de Jogo:
 
 </pre>
 
-##RESTRIÇÕES E LIMITAÇÕES
+RESTRIÇÕES E LIMITAÇÕES
 
 <pre>
 Desempenho:
