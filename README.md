@@ -100,7 +100,8 @@ Manutenibilidade:
 	O jogo deve ser facilmente atualizável e corrigível, permitindo a incorporação de novas funcionalidades e correções de bugs.
 
 
-	![image](https://github.com/joaocolem/ProjetoZ/assets/105292741/c7d8e392-3bf4-464e-90aa-1086d68a1084)
+	![rnf](https://github.com/joaocolem/ProjetoZ/assets/105292741/83bc6f14-e619-4999-ba1f-d483b1e051e4)
+
 </pre>
 
 FUNCIONAIS:
