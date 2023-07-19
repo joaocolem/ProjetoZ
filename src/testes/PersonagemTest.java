@@ -1,6 +1,10 @@
 package src.testes;
 
 import src.Controller.*;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,7 +18,7 @@ public class PersonagemTest {
     @BeforeEach
     public void setup() {
         personagem = new Personagem(0, 0);
-        personagem2 = new Personagem(1, 1);
+        
 
         tempMap = new char[][]{
                 {'.', '.', '.'},
@@ -72,12 +76,15 @@ public class PersonagemTest {
 
     @Test
     public void testMovePlayerEndGame() {
-        World endWorld = personagem2.movePlayer("d", world2);
+        personagem.setTargetCaractere(66);
+        World endWorld = personagem.movePlayer("d", world2);
         char[][] endLayout = endWorld.getMap();
         Assertions.assertEquals('A', endLayout[personagem2.getPlayerX()][personagem2.getPlayerY()]);
     }
 
+
+}
     
 
 
-}
+

@@ -41,11 +41,8 @@ public class Personagem {
         //verifica se pegou a ultima letra, se sim sobe a tela final
         //Inicio fim
         if(map[newY][newX] == 'A') {
-            char[][] layout = Helper.getLayout("src/View/layouts/world/end.txt");
-            playerX = 0;
-            playerY = 0;
-            World end = new World(layout);
-            return end;
+            return  endLayout();
+
         }
         //Final fim
 
@@ -109,5 +106,19 @@ public class Personagem {
 
         return currentWorld;
     }
+
+    public void setTargetCaractere(int target){
+        inventory.setExpectedASCIIChar(target);
+    }
+
+
+    public World endLayout(){
+        char[][] layout = Helper.getLayout("src/View/layouts/world/end.txt");
+        playerX = 0;
+        playerY = 0;
+        World end = new World(layout);
+        return end;
+    }
+
 
 }

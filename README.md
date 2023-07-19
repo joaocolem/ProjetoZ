@@ -118,18 +118,34 @@ Modo de Jogo:
 
 </pre>
 
-RESTRIÇÕES E LIMITAÇÕES
+Requisitos de Sistema
 
 <pre>
-Desempenho:
-	O jogo "Labirinto Z" precisa ser otimizado para garantir um desempenho adequado em diferentes plataformas e dispositivos.
-Suporte a Plataformas:
-	O jogo foi desenvolvido para ser executado apenas em desktop, sendo necessário o uso de uma IDE.
-	O jogo deve ser desenvolvido levando em consideração as limitações e restrições das plataformas utilizadas.
-Idioma:
-	O jogo está disponível apenas em português-BR.
-Formato e Layout do Jogo:
-	O formato do jogo utiliza caracteres especiais e letras para representar os desafios, as demarcações dos mundos e os objetivos propostos. Não é possível melhorar esse aspecto.
+Plataforma:
+
+Sistema Operacional: Windows, macOS ou Linux (ou outros sistemas compatíveis com Java).
+Ambiente de Desenvolvimento e Execução:
+
+Java Development Kit (JDK) instalado para compilação e desenvolvimento.
+Java Runtime Environment (JRE) instalado para execução do jogo.
+Hardware mínimo:
+
+Processador: Recomenda-se um processador com pelo menos 1.6 GHz.
+Memória RAM: Recomenda-se pelo menos 2 GB de RAM.
+Espaço em disco: Verifique o espaço necessário para os recursos do jogo, gráficos, sons etc.
+Resolução de tela:
+
+Defina a resolução mínima e recomendada para uma experiência de jogo adequada.
+Versão do Java:
+
+
+Placa de som:
+
+A máquina do usuário deve possuir uma placa de som funcional para que o som do jogo seja reproduzido.
+Teclado:
+
+Certifique-se de que o teclado seja funcional e suporte a entrada das teclas WASD.
+
 
 </pre>
 

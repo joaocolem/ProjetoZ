@@ -10,6 +10,8 @@ import java.util.ArrayList;
 public class Inventory {
     private static ArrayList<Character> collectedItems = new ArrayList<>();
     private static String inInventory = "";
+    private int expectedASCIIChar = 88;
+
 
     public Inventory(){
 
@@ -25,7 +27,6 @@ public class Inventory {
     */
     
     public boolean canCollect(int x, int y, char[][] currentWorld) {
-        int expectedASCIIChar = 88;
 
         if (!collectedItems.isEmpty()) {
             expectedASCIIChar = ((int) collectedItems.get(collectedItems.size() - 1)) - 1;
@@ -82,4 +83,22 @@ public class Inventory {
     public static String getInInventory () {
         return inInventory;
     }
+    
+
+
+
+    /**
+     * @return int return the expectedASCIIChar
+     */
+    public int getExpectedASCIIChar() {
+        return expectedASCIIChar;
+    }
+
+    /**
+     * @param expectedASCIIChar the expectedASCIIChar to set
+     */
+    public void setExpectedASCIIChar(int expectedASCIIChar) {
+        this.expectedASCIIChar = expectedASCIIChar;
+    }
+
 }
