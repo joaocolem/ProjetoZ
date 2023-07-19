@@ -98,6 +98,9 @@ Confiabilidade:
 	O jogo deve ser estável e confiável, evitando crashes e comportamentos inesperados.
 Manutenibilidade:
 	O jogo deve ser facilmente atualizável e corrigível, permitindo a incorporação de novas funcionalidades e correções de bugs.
+
+
+	https://github.com/joaocolem/ProjetoZ/assets/105292741/c7d8e392-3bf4-464e-90aa-1086d68a1084
 </pre>
 
 FUNCIONAIS:
