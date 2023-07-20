@@ -171,14 +171,15 @@ Ator: Usuário
 Pré-condição: 
 Fluxo normal: 	1. abrir o jogo a partir do menu principal
 		2. preencher todos os campos
-Fluxos alternativos: 1. Menu secundário e selecionar alterar Nickname
+Fluxos alternativos: 1. Nome inserido inválido
 Pós-condição: Nickname atualizado
 
 Caso de uso: Novo jogo
 Ator: Usuário
 Pré-condição: inserir Nickname
-Fluxo normal: 	1. selecionar início de novo jogo		
-Fluxos alternativos:	
+Fluxo normal: 	1. selecionar início de novo jogo
+		2. inicia jogo
+Fluxos alternativos: Não conseguiu acessar os mundos e retorna erro	
 Pós-condição: Jogo iniciado
 
 Caso de uso: Movimentar personagem
@@ -202,6 +203,15 @@ Fluxo normal: 	1. Movimentar personagem
 		2. Coletar caractere de mini-jogo
 Fluxos alternativos:	
 Pós-condição: Liberar passagem
+
+Caso de uso: Tela Endgame
+Ator: Usuário
+Pré-condição: Coletou letra A
+Fluxo normal: 	1. verificar inventário
+		2. Mostrar tela
+Fluxos alternativos:	
+Pós-condição: Finalizar jogo
+
 
 </pre>
 
